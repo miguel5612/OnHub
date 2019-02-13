@@ -1,0 +1,93 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="airQ.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+	
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="google-site-verification" content="4EOtEm4UDA9x3EZAkt41zt6HJmOwEJHIvJ4PBdXZwlE" />
+	<title><%: Page.Title %> - Medicion online acerca de calidad de aire</title>
+
+	<asp:PlaceHolder runat="server">
+		<%: Scripts.Render("~/bundles/modernizr") %>
+	</asp:PlaceHolder>
+
+	<webopt:bundlereference runat="server" path="~/Content/css" />
+	
+	<script src="Scripts/jquery-3.3.1.min.js"></script>
+	<link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+	<link href="Content/bootstrap.min.css" rel="stylesheet" />
+	<link href="Content/Bootstrap%204.1.3/bootstrap.min.css" rel="stylesheet" />
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+  <div class="container">
+	<a class="navbar-brand" href="/Default">ONHUB - Un lugar para registrar todos tus dispositivos</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+		  <span class="navbar-toggler-icon"></span>
+		</button>
+	<div class="collapse navbar-collapse" id="navbarResponsive">
+	  <ul class="navbar-nav ml-auto">
+		<li class="nav-item active">
+		  <a class="nav-link" href="/Default">Inicio
+				<span class="sr-only">(current)</span>
+			  </a>
+		</li>
+		<li class="nav-item">
+		  <a class="nav-link" href="/About">Acerca de nosotros</a>
+		</li>
+		<li class="nav-item">
+		  <a class="nav-link" href="/Register">Registrate ahora!</a>
+		</li>
+		<li class="nav-item">
+		  <a class="nav-link" href="/Login">Inicia sesion</a>
+		</li>
+	  </ul>
+	</div>
+  </div>
+</nav>
+	<form runat="server">
+		<asp:ScriptManager runat="server">
+			<Scripts>
+				<%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+				<%--Framework Scripts--%>
+				<asp:ScriptReference Name="MsAjaxBundle" />
+				<asp:ScriptReference Name="jquery" />
+				<asp:ScriptReference Name="bootstrap" />
+				<asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+				<asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+				<asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+				<asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+				<asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+				<asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+				<asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+				<asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+				<asp:ScriptReference Name="WebFormsBundle" />
+				<%--Site Scripts--%>
+			</Scripts>
+		</asp:ScriptManager>
+		
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-131597794-1"></script>
+	<script src="Scripts/gtag.js"></script>
+		
+		<div class="container body-content">
+			<asp:ContentPlaceHolder ID="MainContent" runat="server">
+			</asp:ContentPlaceHolder>
+			<hr />
+			<footer>
+				<p>&copy; <%: DateTime.Now.Year %> - AirQ App</p>
+			</footer>
+		</div>
+
+	</form>
+	<script src="Scripts/jquery-3.3.1.slim.js"></script>
+	<script src="Scripts/popper.min.js"></script>
+<script src="Scripts/bootstrap.min.js"></script>
+
+</body>
+</html>
