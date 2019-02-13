@@ -1,0 +1,83 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="dashboard.master.cs" Inherits="airQ.dashboard" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>airQ-Dashboard</title>
+    <meta name="google-site-verification" content="4EOtEm4UDA9x3EZAkt41zt6HJmOwEJHIvJ4PBdXZwlE" />
+    <%--Framework Scripts--%>
+    <asp:ScriptReference Name="MsAjaxBundle" />
+    <asp:ScriptReference Name="jquery" />
+    <asp:ScriptReference Name="bootstrap" />
+    <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+    <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+    <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+    <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+    <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+    <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+    <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+    <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+    <asp:ScriptReference Name="WebFormsBundle" />
+    <%--Site Scripts--%>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="Scripts/jquery-3.3.1.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131597794-1"></script>
+    <script src="Scripts/gtag.js"></script>
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:HiddenField  ID="txtData1" Value="0" runat="server"></asp:HiddenField>
+        <asp:HiddenField  ID="txtData2" Value="0" runat="server"></asp:HiddenField>
+        <asp:HiddenField  ID="txtData3" Value="0" runat="server"></asp:HiddenField>
+        <asp:HiddenField  ID="txtData4" Value="0" runat="server"></asp:HiddenField>
+        <asp:HiddenField  ID="txtData5" Value="0" runat="server"></asp:HiddenField>
+        <asp:HiddenField  ID="txtData6" Value="0" runat="server"></asp:HiddenField>
+        <asp:HiddenField  ID="txtData7" Value="0" runat="server"></asp:HiddenField>
+        <asp:HiddenField  ID="txtData8" Value="0" runat="server"></asp:HiddenField>
+        <asp:HiddenField  ID="txtData9" Value="0" runat="server"></asp:HiddenField>
+         <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" runat="server" href="~/">AirQ</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                     <ul class="nav navbar-nav">
+                        <li><a runat="server" href="~/dashboard">pagina prinicipal</a></li>
+                        <li><a runat="server" class="dropdown-toggle" data-toggle="dropdown">dispositivos</a>                        
+                         <ul id="menu" runat="server" class="dropdown-menu"></ul></li>
+                        <li><a runat="server" href="~/registerDevice">registrar nuevo dispositivo</a></li>
+                         <li><a runat="server" href="~/editDevice">ver/editar dispositivos</a></li>
+                         <li><a runat="server" href="~/logout">cerrar sesion</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container body-content">
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+            <hr />
+            <footer>
+                <p>&copy; <%: DateTime.Now.Year %> - AirQ App</p>
+            </footer>
+        </div>
+    </form>
+</body>
+</html>
