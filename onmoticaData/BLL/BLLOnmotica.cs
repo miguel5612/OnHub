@@ -44,6 +44,14 @@ namespace airQ.App_Code
                 return DB.Database.SqlQuery<report>(strSQL).ToList();
             }
         }
+        public List<onEmail> getonEmail()
+        {
+            using (onHubEntities DB = new onHubEntities())
+            {
+                string strSQL = "SELECT * FROM onEmail WHERE usrId = " + usrId.ToString();
+                return DB.Database.SqlQuery<onEmail>(strSQL).ToList();
+            }
+        }
 
 
 
