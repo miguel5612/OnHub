@@ -1,0 +1,677 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="onHubModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="measurements">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="inTopic" Type="varchar" MaxLength="1000" />
+          <Property Name="registerDate" Type="datetime" />
+          <Property Name="field1" Type="varchar" MaxLength="50" />
+          <Property Name="field2" Type="varchar" MaxLength="50" />
+          <Property Name="field3" Type="varchar" MaxLength="50" />
+          <Property Name="field4" Type="varchar" MaxLength="50" />
+          <Property Name="field5" Type="varchar" MaxLength="50" />
+          <Property Name="field6" Type="varchar" MaxLength="50" />
+          <Property Name="field7" Type="varchar" MaxLength="50" />
+          <Property Name="field8" Type="varchar" MaxLength="50" />
+          <Property Name="field9" Type="varchar" MaxLength="50" />
+          <Property Name="field10" Type="varchar" MaxLength="50" />
+          <Property Name="field11" Type="varchar" MaxLength="50" />
+          <Property Name="field12" Type="varchar" MaxLength="50" />
+          <Property Name="field13" Type="varchar" MaxLength="50" />
+          <Property Name="field14" Type="varchar" MaxLength="50" />
+          <Property Name="field15" Type="varchar" MaxLength="50" />
+          <Property Name="status" Type="bit" />
+        </EntityType>
+        <EntityType Name="onEmail">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="usrId" Type="int" />
+          <Property Name="usrEmail" Type="varchar" MaxLength="100" />
+          <Property Name="status" Type="bit" />
+        </EntityType>
+        <EntityType Name="onUser">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="userName" Type="varchar" MaxLength="50" />
+          <Property Name="password" Type="varchar" MaxLength="50" />
+          <Property Name="userTypID" Type="int" />
+          <Property Name="creationDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="personalData">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="usrId" Type="int" />
+          <Property Name="profilePhoto" Type="varchar" MaxLength="100" />
+          <Property Name="cellphone" Type="varchar" MaxLength="100" />
+          <Property Name="birthday" Type="date" />
+          <Property Name="facebookURL" Type="varchar" MaxLength="200" />
+          <Property Name="twitterURL" Type="varchar" MaxLength="200" />
+          <Property Name="linkedinURL" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="report">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="100" />
+          <Property Name="thingId" Type="int" />
+          <Property Name="usrId" Type="int" />
+          <Property Name="startDate" Type="datetime" />
+          <Property Name="endDate" Type="datetime" />
+          <Property Name="field1Max" Type="varchar" MaxLength="50" />
+          <Property Name="field2Max" Type="varchar" MaxLength="50" />
+          <Property Name="field3Max" Type="varchar" MaxLength="50" />
+          <Property Name="field4Max" Type="varchar" MaxLength="50" />
+          <Property Name="field5Max" Type="varchar" MaxLength="50" />
+          <Property Name="field6Max" Type="varchar" MaxLength="50" />
+          <Property Name="field7Max" Type="varchar" MaxLength="50" />
+          <Property Name="field8Max" Type="varchar" MaxLength="50" />
+          <Property Name="field9Max" Type="varchar" MaxLength="50" />
+          <Property Name="field10Max" Type="varchar" MaxLength="50" />
+          <Property Name="field11Max" Type="varchar" MaxLength="50" />
+          <Property Name="field12Max" Type="varchar" MaxLength="50" />
+          <Property Name="field13Max" Type="varchar" MaxLength="50" />
+          <Property Name="field14Max" Type="varchar" MaxLength="50" />
+          <Property Name="field15Max" Type="varchar" MaxLength="50" />
+          <Property Name="field1Min" Type="varchar" MaxLength="50" />
+          <Property Name="field2Min" Type="varchar" MaxLength="50" />
+          <Property Name="field3Min" Type="varchar" MaxLength="50" />
+          <Property Name="field4Min" Type="varchar" MaxLength="50" />
+          <Property Name="field5Min" Type="varchar" MaxLength="50" />
+          <Property Name="field6Min" Type="varchar" MaxLength="50" />
+          <Property Name="field7Min" Type="varchar" MaxLength="50" />
+          <Property Name="field8Min" Type="varchar" MaxLength="50" />
+          <Property Name="field9Min" Type="varchar" MaxLength="50" />
+          <Property Name="field10Min" Type="varchar" MaxLength="50" />
+          <Property Name="field11Min" Type="varchar" MaxLength="50" />
+          <Property Name="field12Min" Type="varchar" MaxLength="50" />
+          <Property Name="field13Min" Type="varchar" MaxLength="50" />
+          <Property Name="field14Min" Type="varchar" MaxLength="50" />
+          <Property Name="field15Min" Type="varchar" MaxLength="50" />
+          <Property Name="field1AVG" Type="varchar" MaxLength="50" />
+          <Property Name="field2AVG" Type="varchar" MaxLength="50" />
+          <Property Name="field3AVG" Type="varchar" MaxLength="50" />
+          <Property Name="field4AVG" Type="varchar" MaxLength="50" />
+          <Property Name="field5AVG" Type="varchar" MaxLength="50" />
+          <Property Name="field6AVG" Type="varchar" MaxLength="50" />
+          <Property Name="field7AVG" Type="varchar" MaxLength="50" />
+          <Property Name="field8AVG" Type="varchar" MaxLength="50" />
+          <Property Name="field9AVG" Type="varchar" MaxLength="50" />
+          <Property Name="field10AVG" Type="varchar" MaxLength="50" />
+          <Property Name="field11AVG" Type="varchar" MaxLength="50" />
+          <Property Name="field12AVG" Type="varchar" MaxLength="50" />
+          <Property Name="field13AVG" Type="varchar" MaxLength="50" />
+          <Property Name="field14AVG" Type="varchar" MaxLength="50" />
+          <Property Name="field15AVG" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'onHub.yerCar.state' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="state">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" />
+          <Property Name="createAt" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'onHub.yerCar.thing' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="thing">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idUsr" Type="int" />
+          <Property Name="inTopic" Type="varchar" MaxLength="1000" />
+          <Property Name="outTopic" Type="varchar" MaxLength="1000" />
+          <Property Name="thingTyp" Type="int" />
+          <Property Name="state" Type="int" />
+          <Property Name="creationDate" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'onHub.yerCar.thingTyp' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="thingTyp">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" />
+          <Property Name="maxTimeOnline" Type="int" />
+          <Property Name="field1" Type="varchar" MaxLength="50" />
+          <Property Name="field2" Type="varchar" MaxLength="50" />
+          <Property Name="field3" Type="varchar" MaxLength="50" />
+          <Property Name="field4" Type="varchar" MaxLength="50" />
+          <Property Name="field5" Type="varchar" MaxLength="50" />
+          <Property Name="field6" Type="varchar" MaxLength="50" />
+          <Property Name="field7" Type="varchar" MaxLength="50" />
+          <Property Name="field8" Type="varchar" MaxLength="50" />
+          <Property Name="field9" Type="varchar" MaxLength="50" />
+          <Property Name="field10" Type="varchar" MaxLength="50" />
+          <Property Name="field11" Type="varchar" MaxLength="50" />
+          <Property Name="field12" Type="varchar" MaxLength="50" />
+          <Property Name="field13" Type="varchar" MaxLength="50" />
+          <Property Name="field14" Type="varchar" MaxLength="50" />
+          <Property Name="field15" Type="varchar" MaxLength="50" />
+          <Property Name="field1Max" Type="varchar" MaxLength="50" />
+          <Property Name="field2Max" Type="varchar" MaxLength="50" />
+          <Property Name="field3Max" Type="varchar" MaxLength="50" />
+          <Property Name="field4Max" Type="varchar" MaxLength="50" />
+          <Property Name="field5Max" Type="varchar" MaxLength="50" />
+          <Property Name="field6Max" Type="varchar" MaxLength="50" />
+          <Property Name="field7Max" Type="varchar" MaxLength="50" />
+          <Property Name="field8Max" Type="varchar" MaxLength="50" />
+          <Property Name="field9Max" Type="varchar" MaxLength="50" />
+          <Property Name="field10Max" Type="varchar" MaxLength="50" />
+          <Property Name="field11Max" Type="varchar" MaxLength="50" />
+          <Property Name="field12Max" Type="varchar" MaxLength="50" />
+          <Property Name="field13Max" Type="varchar" MaxLength="50" />
+          <Property Name="field14Max" Type="varchar" MaxLength="50" />
+          <Property Name="field15Max" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'onHub.yerCar.userTyp' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="userTyp">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="buyPlan" Type="int" />
+          <Property Name="description" Type="int" />
+          <Property Name="price" Type="int" />
+        </EntityType>
+        <EntityContainer Name="onHubModelStoreContainer">
+          <EntitySet Name="measurements" EntityType="Self.measurements" Schema="yerCar" store:Type="Tables" />
+          <EntitySet Name="onEmail" EntityType="Self.onEmail" Schema="yerCar" store:Type="Tables" />
+          <EntitySet Name="onUser" EntityType="Self.onUser" Schema="yerCar" store:Type="Tables" />
+          <EntitySet Name="personalData" EntityType="Self.personalData" Schema="yerCar" store:Type="Tables" />
+          <EntitySet Name="report" EntityType="Self.report" Schema="yerCar" store:Type="Tables" />
+          <EntitySet Name="state" EntityType="Self.state" store:Type="Tables" store:Schema="yerCar">
+            <DefiningQuery>SELECT 
+    [state].[id] AS [id], 
+    [state].[name] AS [name], 
+    [state].[createAt] AS [createAt]
+    FROM [yerCar].[state] AS [state]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="thing" EntityType="Self.thing" store:Type="Tables" store:Schema="yerCar">
+            <DefiningQuery>SELECT 
+    [thing].[id] AS [id], 
+    [thing].[idUsr] AS [idUsr], 
+    [thing].[inTopic] AS [inTopic], 
+    [thing].[outTopic] AS [outTopic], 
+    [thing].[thingTyp] AS [thingTyp], 
+    [thing].[state] AS [state], 
+    [thing].[creationDate] AS [creationDate]
+    FROM [yerCar].[thing] AS [thing]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="thingTyp" EntityType="Self.thingTyp" store:Type="Tables" store:Schema="yerCar">
+            <DefiningQuery>SELECT 
+    [thingTyp].[id] AS [id], 
+    [thingTyp].[name] AS [name], 
+    [thingTyp].[maxTimeOnline] AS [maxTimeOnline], 
+    [thingTyp].[field1] AS [field1], 
+    [thingTyp].[field2] AS [field2], 
+    [thingTyp].[field3] AS [field3], 
+    [thingTyp].[field4] AS [field4], 
+    [thingTyp].[field5] AS [field5], 
+    [thingTyp].[field6] AS [field6], 
+    [thingTyp].[field7] AS [field7], 
+    [thingTyp].[field8] AS [field8], 
+    [thingTyp].[field9] AS [field9], 
+    [thingTyp].[field10] AS [field10], 
+    [thingTyp].[field11] AS [field11], 
+    [thingTyp].[field12] AS [field12], 
+    [thingTyp].[field13] AS [field13], 
+    [thingTyp].[field14] AS [field14], 
+    [thingTyp].[field15] AS [field15], 
+    [thingTyp].[field1Max] AS [field1Max], 
+    [thingTyp].[field2Max] AS [field2Max], 
+    [thingTyp].[field3Max] AS [field3Max], 
+    [thingTyp].[field4Max] AS [field4Max], 
+    [thingTyp].[field5Max] AS [field5Max], 
+    [thingTyp].[field6Max] AS [field6Max], 
+    [thingTyp].[field7Max] AS [field7Max], 
+    [thingTyp].[field8Max] AS [field8Max], 
+    [thingTyp].[field9Max] AS [field9Max], 
+    [thingTyp].[field10Max] AS [field10Max], 
+    [thingTyp].[field11Max] AS [field11Max], 
+    [thingTyp].[field12Max] AS [field12Max], 
+    [thingTyp].[field13Max] AS [field13Max], 
+    [thingTyp].[field14Max] AS [field14Max], 
+    [thingTyp].[field15Max] AS [field15Max]
+    FROM [yerCar].[thingTyp] AS [thingTyp]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="userTyp" EntityType="Self.userTyp" store:Type="Tables" store:Schema="yerCar">
+            <DefiningQuery>SELECT 
+    [userTyp].[id] AS [id], 
+    [userTyp].[buyPlan] AS [buyPlan], 
+    [userTyp].[description] AS [description], 
+    [userTyp].[price] AS [price]
+    FROM [yerCar].[userTyp] AS [userTyp]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="onHubModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="measurement">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="inTopic" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="registerDate" Type="DateTime" Precision="3" />
+          <Property Name="field1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field4" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field5" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field6" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field7" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field8" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field9" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field10" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field11" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field12" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field13" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field14" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field15" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="status" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="onEmail">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="usrId" Type="Int32" />
+          <Property Name="usrEmail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="status" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="onUser">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="userName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="userTypID" Type="Int32" />
+          <Property Name="creationDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="personalData">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="usrId" Type="Int32" />
+          <Property Name="profilePhoto" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="cellphone" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="birthday" Type="DateTime" Precision="0" />
+          <Property Name="facebookURL" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="twitterURL" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="linkedinURL" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="report">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="thingId" Type="Int32" />
+          <Property Name="usrId" Type="Int32" />
+          <Property Name="startDate" Type="DateTime" Precision="3" />
+          <Property Name="endDate" Type="DateTime" Precision="3" />
+          <Property Name="field1Max" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field2Max" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field3Max" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field4Max" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field5Max" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field6Max" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field7Max" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field8Max" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field9Max" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field10Max" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field11Max" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field12Max" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field13Max" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field14Max" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field15Max" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field1Min" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field2Min" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field3Min" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field4Min" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field5Min" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field6Min" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field7Min" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field8Min" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field9Min" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field10Min" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field11Min" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field12Min" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field13Min" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field14Min" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field15Min" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field1AVG" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field2AVG" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field3AVG" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field4AVG" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field5AVG" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field6AVG" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field7AVG" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field8AVG" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field9AVG" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field10AVG" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field11AVG" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field12AVG" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field13AVG" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field14AVG" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field15AVG" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="state">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="createAt" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="thing">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idUsr" Type="Int32" />
+          <Property Name="inTopic" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="outTopic" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="thingTyp" Type="Int32" />
+          <Property Name="state" Type="Int32" />
+          <Property Name="creationDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="thingTyp">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="maxTimeOnline" Type="Int32" />
+          <Property Name="field1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field4" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field5" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field6" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field7" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field8" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field9" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field10" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field11" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field12" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field13" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field14" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field15" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field1Max" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field2Max" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field3Max" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field4Max" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field5Max" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field6Max" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field7Max" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field8Max" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field9Max" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field10Max" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field11Max" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field12Max" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field13Max" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field14Max" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="field15Max" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="userTyp">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="buyPlan" Type="Int32" />
+          <Property Name="description" Type="Int32" />
+          <Property Name="price" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="onHubEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="measurements" EntityType="Self.measurement" />
+          <EntitySet Name="onEmails" EntityType="Self.onEmail" />
+          <EntitySet Name="onUsers" EntityType="Self.onUser" />
+          <EntitySet Name="personalDatas" EntityType="Self.personalData" />
+          <EntitySet Name="reports" EntityType="Self.report" />
+          <EntitySet Name="states" EntityType="Self.state" />
+          <EntitySet Name="things" EntityType="Self.thing" />
+          <EntitySet Name="thingTyps" EntityType="Self.thingTyp" />
+          <EntitySet Name="userTyps" EntityType="Self.userTyp" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="onHubModelStoreContainer" CdmEntityContainer="onHubEntities">
+          <EntitySetMapping Name="measurements">
+            <EntityTypeMapping TypeName="onHubModel.measurement">
+              <MappingFragment StoreEntitySet="measurements">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="inTopic" ColumnName="inTopic" />
+                <ScalarProperty Name="registerDate" ColumnName="registerDate" />
+                <ScalarProperty Name="field1" ColumnName="field1" />
+                <ScalarProperty Name="field2" ColumnName="field2" />
+                <ScalarProperty Name="field3" ColumnName="field3" />
+                <ScalarProperty Name="field4" ColumnName="field4" />
+                <ScalarProperty Name="field5" ColumnName="field5" />
+                <ScalarProperty Name="field6" ColumnName="field6" />
+                <ScalarProperty Name="field7" ColumnName="field7" />
+                <ScalarProperty Name="field8" ColumnName="field8" />
+                <ScalarProperty Name="field9" ColumnName="field9" />
+                <ScalarProperty Name="field10" ColumnName="field10" />
+                <ScalarProperty Name="field11" ColumnName="field11" />
+                <ScalarProperty Name="field12" ColumnName="field12" />
+                <ScalarProperty Name="field13" ColumnName="field13" />
+                <ScalarProperty Name="field14" ColumnName="field14" />
+                <ScalarProperty Name="field15" ColumnName="field15" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="onEmails">
+            <EntityTypeMapping TypeName="onHubModel.onEmail">
+              <MappingFragment StoreEntitySet="onEmail">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="usrId" ColumnName="usrId" />
+                <ScalarProperty Name="usrEmail" ColumnName="usrEmail" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="onUsers">
+            <EntityTypeMapping TypeName="onHubModel.onUser">
+              <MappingFragment StoreEntitySet="onUser">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="userName" ColumnName="userName" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="userTypID" ColumnName="userTypID" />
+                <ScalarProperty Name="creationDate" ColumnName="creationDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="personalDatas">
+            <EntityTypeMapping TypeName="onHubModel.personalData">
+              <MappingFragment StoreEntitySet="personalData">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="usrId" ColumnName="usrId" />
+                <ScalarProperty Name="profilePhoto" ColumnName="profilePhoto" />
+                <ScalarProperty Name="cellphone" ColumnName="cellphone" />
+                <ScalarProperty Name="birthday" ColumnName="birthday" />
+                <ScalarProperty Name="facebookURL" ColumnName="facebookURL" />
+                <ScalarProperty Name="twitterURL" ColumnName="twitterURL" />
+                <ScalarProperty Name="linkedinURL" ColumnName="linkedinURL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="reports">
+            <EntityTypeMapping TypeName="onHubModel.report">
+              <MappingFragment StoreEntitySet="report">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="thingId" ColumnName="thingId" />
+                <ScalarProperty Name="usrId" ColumnName="usrId" />
+                <ScalarProperty Name="startDate" ColumnName="startDate" />
+                <ScalarProperty Name="endDate" ColumnName="endDate" />
+                <ScalarProperty Name="field1Max" ColumnName="field1Max" />
+                <ScalarProperty Name="field2Max" ColumnName="field2Max" />
+                <ScalarProperty Name="field3Max" ColumnName="field3Max" />
+                <ScalarProperty Name="field4Max" ColumnName="field4Max" />
+                <ScalarProperty Name="field5Max" ColumnName="field5Max" />
+                <ScalarProperty Name="field6Max" ColumnName="field6Max" />
+                <ScalarProperty Name="field7Max" ColumnName="field7Max" />
+                <ScalarProperty Name="field8Max" ColumnName="field8Max" />
+                <ScalarProperty Name="field9Max" ColumnName="field9Max" />
+                <ScalarProperty Name="field10Max" ColumnName="field10Max" />
+                <ScalarProperty Name="field11Max" ColumnName="field11Max" />
+                <ScalarProperty Name="field12Max" ColumnName="field12Max" />
+                <ScalarProperty Name="field13Max" ColumnName="field13Max" />
+                <ScalarProperty Name="field14Max" ColumnName="field14Max" />
+                <ScalarProperty Name="field15Max" ColumnName="field15Max" />
+                <ScalarProperty Name="field1Min" ColumnName="field1Min" />
+                <ScalarProperty Name="field2Min" ColumnName="field2Min" />
+                <ScalarProperty Name="field3Min" ColumnName="field3Min" />
+                <ScalarProperty Name="field4Min" ColumnName="field4Min" />
+                <ScalarProperty Name="field5Min" ColumnName="field5Min" />
+                <ScalarProperty Name="field6Min" ColumnName="field6Min" />
+                <ScalarProperty Name="field7Min" ColumnName="field7Min" />
+                <ScalarProperty Name="field8Min" ColumnName="field8Min" />
+                <ScalarProperty Name="field9Min" ColumnName="field9Min" />
+                <ScalarProperty Name="field10Min" ColumnName="field10Min" />
+                <ScalarProperty Name="field11Min" ColumnName="field11Min" />
+                <ScalarProperty Name="field12Min" ColumnName="field12Min" />
+                <ScalarProperty Name="field13Min" ColumnName="field13Min" />
+                <ScalarProperty Name="field14Min" ColumnName="field14Min" />
+                <ScalarProperty Name="field15Min" ColumnName="field15Min" />
+                <ScalarProperty Name="field1AVG" ColumnName="field1AVG" />
+                <ScalarProperty Name="field2AVG" ColumnName="field2AVG" />
+                <ScalarProperty Name="field3AVG" ColumnName="field3AVG" />
+                <ScalarProperty Name="field4AVG" ColumnName="field4AVG" />
+                <ScalarProperty Name="field5AVG" ColumnName="field5AVG" />
+                <ScalarProperty Name="field6AVG" ColumnName="field6AVG" />
+                <ScalarProperty Name="field7AVG" ColumnName="field7AVG" />
+                <ScalarProperty Name="field8AVG" ColumnName="field8AVG" />
+                <ScalarProperty Name="field9AVG" ColumnName="field9AVG" />
+                <ScalarProperty Name="field10AVG" ColumnName="field10AVG" />
+                <ScalarProperty Name="field11AVG" ColumnName="field11AVG" />
+                <ScalarProperty Name="field12AVG" ColumnName="field12AVG" />
+                <ScalarProperty Name="field13AVG" ColumnName="field13AVG" />
+                <ScalarProperty Name="field14AVG" ColumnName="field14AVG" />
+                <ScalarProperty Name="field15AVG" ColumnName="field15AVG" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="states">
+            <EntityTypeMapping TypeName="onHubModel.state">
+              <MappingFragment StoreEntitySet="state">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="createAt" ColumnName="createAt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="things">
+            <EntityTypeMapping TypeName="onHubModel.thing">
+              <MappingFragment StoreEntitySet="thing">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="idUsr" ColumnName="idUsr" />
+                <ScalarProperty Name="inTopic" ColumnName="inTopic" />
+                <ScalarProperty Name="outTopic" ColumnName="outTopic" />
+                <ScalarProperty Name="thingTyp" ColumnName="thingTyp" />
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="creationDate" ColumnName="creationDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="thingTyps">
+            <EntityTypeMapping TypeName="onHubModel.thingTyp">
+              <MappingFragment StoreEntitySet="thingTyp">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="maxTimeOnline" ColumnName="maxTimeOnline" />
+                <ScalarProperty Name="field1" ColumnName="field1" />
+                <ScalarProperty Name="field2" ColumnName="field2" />
+                <ScalarProperty Name="field3" ColumnName="field3" />
+                <ScalarProperty Name="field4" ColumnName="field4" />
+                <ScalarProperty Name="field5" ColumnName="field5" />
+                <ScalarProperty Name="field6" ColumnName="field6" />
+                <ScalarProperty Name="field7" ColumnName="field7" />
+                <ScalarProperty Name="field8" ColumnName="field8" />
+                <ScalarProperty Name="field9" ColumnName="field9" />
+                <ScalarProperty Name="field10" ColumnName="field10" />
+                <ScalarProperty Name="field11" ColumnName="field11" />
+                <ScalarProperty Name="field12" ColumnName="field12" />
+                <ScalarProperty Name="field13" ColumnName="field13" />
+                <ScalarProperty Name="field14" ColumnName="field14" />
+                <ScalarProperty Name="field15" ColumnName="field15" />
+                <ScalarProperty Name="field1Max" ColumnName="field1Max" />
+                <ScalarProperty Name="field2Max" ColumnName="field2Max" />
+                <ScalarProperty Name="field3Max" ColumnName="field3Max" />
+                <ScalarProperty Name="field4Max" ColumnName="field4Max" />
+                <ScalarProperty Name="field5Max" ColumnName="field5Max" />
+                <ScalarProperty Name="field6Max" ColumnName="field6Max" />
+                <ScalarProperty Name="field7Max" ColumnName="field7Max" />
+                <ScalarProperty Name="field8Max" ColumnName="field8Max" />
+                <ScalarProperty Name="field9Max" ColumnName="field9Max" />
+                <ScalarProperty Name="field10Max" ColumnName="field10Max" />
+                <ScalarProperty Name="field11Max" ColumnName="field11Max" />
+                <ScalarProperty Name="field12Max" ColumnName="field12Max" />
+                <ScalarProperty Name="field13Max" ColumnName="field13Max" />
+                <ScalarProperty Name="field14Max" ColumnName="field14Max" />
+                <ScalarProperty Name="field15Max" ColumnName="field15Max" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="userTyps">
+            <EntityTypeMapping TypeName="onHubModel.userTyp">
+              <MappingFragment StoreEntitySet="userTyp">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="buyPlan" ColumnName="buyPlan" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="price" ColumnName="price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

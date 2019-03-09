@@ -4,12 +4,29 @@ using System.Web;
 using System.Data;
 using System.Linq;
 using System.Text;
-using System.Data.SqlClient;
 
 namespace airQ.App_Code
 {
     public class BLLOnmotica
     {
+        private Int32 usrId;
+        public BLLOnmotica(int pUsrId)
+        {
+            usrId = pUsrId;
+        }
+
+        /*
+        public List<onUser> getUserData()
+        {
+            using ( DB = new BeDipsSBWEntities())
+            {
+                string strSQL = "SET ARITHABORT ON; SELECT portNewsChannelKopf.PNCKid, portNewsChannelKopf.HauptTitel, portNewsChannelKopf.BildPfadKlein, portNewsChannelKopf.BildPfadGross, portNewsChannelKopf.DownloadDok, STUFF((SELECT '<br />' + Text FROM portNewsChannelDetail WHERE PNCKid = portNewsChannelKopf.PNCKid AND ErscheinungsStatus = 0 ORDER BY portNewsChannelDetail.Reihenfolge FOR XML PATH(''), TYPE).value('.', 'NVARCHAR(MAX)'), 1, 6, '') AS DetailText, (SELECT CAST(COUNT(*) AS Bit) FROM portNewsChannelDetail WHERE (PNCKid=portNewsChannelKopf.PNCKid)) AS Weiterlesen FROM portNewsChannelKopf WHERE DATEADD(dd, 0, DATEDIFF(dd, 0, GETDATE())) BETWEEN erscheintVon AND erscheintBis ORDER BY erscheintVon DESC";
+                return DB.Database.SqlQuery<PortalNews>(strSQL).ToList();
+            }
+        }
+        */
+
+
     }
 
     public class report
@@ -177,3 +194,4 @@ namespace airQ.App_Code
         public bool status { get; set; }
     }
 }
+ 
