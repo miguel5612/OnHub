@@ -52,6 +52,14 @@ namespace airQ.App_Code
                 return DB.Database.SqlQuery<onEmail>(strSQL).ToList();
             }
         }
+        public List<userTyp> getuserTyp()
+        {
+            using (onHubEntities DB = new onHubEntities())
+            {
+                string strSQL = "SELECT * FROM userTyp WHERE usrId = " + usrId.ToString();
+                return DB.Database.SqlQuery<userTyp>(strSQL).ToList();
+            }
+        }
 
 
 

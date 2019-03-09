@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="onHubModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="onHubModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="measurements">
           <Key>
             <PropertyRef Name="id" />
@@ -188,6 +188,7 @@ warning 6002: The table/view 'onHub.yerCar.userTyp' does not have a primary key 
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="usrId" Type="int" />
           <Property Name="buyPlan" Type="int" />
           <Property Name="description" Type="int" />
           <Property Name="price" Type="int" />
@@ -256,14 +257,14 @@ warning 6002: The table/view 'onHub.yerCar.userTyp' does not have a primary key 
           <EntitySet Name="userTyp" EntityType="Self.userTyp" store:Type="Tables" store:Schema="yerCar">
             <DefiningQuery>SELECT 
     [userTyp].[id] AS [id], 
+    [userTyp].[usrId] AS [usrId], 
     [userTyp].[buyPlan] AS [buyPlan], 
     [userTyp].[description] AS [description], 
     [userTyp].[price] AS [price]
     FROM [yerCar].[userTyp] AS [userTyp]</DefiningQuery>
           </EntitySet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="onHubModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -445,6 +446,7 @@ warning 6002: The table/view 'onHub.yerCar.userTyp' does not have a primary key 
           <Property Name="buyPlan" Type="Int32" />
           <Property Name="description" Type="Int32" />
           <Property Name="price" Type="Int32" />
+          <Property Name="usrId" Type="Int32" />
         </EntityType>
         <EntityContainer Name="onHubEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="measurements" EntityType="Self.measurement" />
@@ -644,6 +646,7 @@ warning 6002: The table/view 'onHub.yerCar.userTyp' does not have a primary key 
           <EntitySetMapping Name="userTyps">
             <EntityTypeMapping TypeName="onHubModel.userTyp">
               <MappingFragment StoreEntitySet="userTyp">
+                <ScalarProperty Name="usrId" ColumnName="usrId" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="buyPlan" ColumnName="buyPlan" />
                 <ScalarProperty Name="description" ColumnName="description" />
