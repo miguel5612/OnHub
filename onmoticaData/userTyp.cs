@@ -18,5 +18,6 @@ namespace onmoticaData
         public Nullable<int> buyPlan { get; set; }
         public Nullable<int> description { get; set; }
         public Nullable<int> price { get; set; }
+        public Nullable<int> usrId { get; set; }
     }
 }

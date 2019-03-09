@@ -60,7 +60,14 @@ namespace airQ.App_Code
                 return DB.Database.SqlQuery<userTyp>(strSQL).ToList();
             }
         }
-
+        public List<thing> getthing()
+        {
+            using (onHubEntities DB = new onHubEntities())
+            {
+                string strSQL = "SELECT * FROM thing WHERE idUsr = " + usrId.ToString();
+                return DB.Database.SqlQuery<thing>(strSQL).ToList();
+            }
+        }
 
 
     }
