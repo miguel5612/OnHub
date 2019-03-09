@@ -68,7 +68,14 @@ namespace airQ.App_Code
                 return DB.Database.SqlQuery<thing>(strSQL).ToList();
             }
         }
-
+        public List<state> getThingState(int thingId)
+        {
+            using (onHubEntities DB = new onHubEntities())
+            {
+                string strSQL = "SELECT * FROM state WHERE thingId = " + thingId.ToString();
+                return DB.Database.SqlQuery<state>(strSQL).ToList();
+            }
+        }
 
     }
 

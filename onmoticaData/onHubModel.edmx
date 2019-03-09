@@ -124,6 +124,7 @@ warning 6002: The table/view 'onHub.yerCar.state' does not have a primary key de
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="thingId" Type="int" />
           <Property Name="name" Type="varchar" MaxLength="50" />
           <Property Name="createAt" Type="datetime" />
         </EntityType>
@@ -202,6 +203,7 @@ warning 6002: The table/view 'onHub.yerCar.userTyp' does not have a primary key 
           <EntitySet Name="state" EntityType="Self.state" store:Type="Tables" store:Schema="yerCar">
             <DefiningQuery>SELECT 
     [state].[id] AS [id], 
+    [state].[thingId] AS [thingId], 
     [state].[name] AS [name], 
     [state].[createAt] AS [createAt]
     FROM [yerCar].[state] AS [state]</DefiningQuery>
@@ -387,6 +389,7 @@ warning 6002: The table/view 'onHub.yerCar.userTyp' does not have a primary key 
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="createAt" Type="DateTime" Precision="3" />
+          <Property Name="thingId" Type="Int32" />
         </EntityType>
         <EntityType Name="thing">
           <Key>
@@ -585,6 +588,7 @@ warning 6002: The table/view 'onHub.yerCar.userTyp' does not have a primary key 
           <EntitySetMapping Name="states">
             <EntityTypeMapping TypeName="onHubModel.state">
               <MappingFragment StoreEntitySet="state">
+                <ScalarProperty Name="thingId" ColumnName="thingId" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="createAt" ColumnName="createAt" />
