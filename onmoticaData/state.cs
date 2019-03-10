@@ -17,5 +17,6 @@ namespace onmoticaData
         public int id { get; set; }
         public string name { get; set; }
         public Nullable<System.DateTime> createAt { get; set; }
+        public Nullable<int> thingId { get; set; }
     }
 }
