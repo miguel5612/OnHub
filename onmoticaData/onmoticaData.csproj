@@ -51,17 +51,49 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\BLLOnmotica.cs" />
+    <Compile Include="measurement.cs">
+      <DependentUpon>onHubModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="onEmail.cs">
+      <DependentUpon>onHubModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="onHubModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>onHubModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="onHubModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>onHubModel.tt</DependentUpon>
     </Compile>
     <Compile Include="onHubModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>onHubModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="onUser.cs">
+      <DependentUpon>onHubModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="personalData.cs">
+      <DependentUpon>onHubModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="report.cs">
+      <DependentUpon>onHubModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="state.cs">
+      <DependentUpon>onHubModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="thing.cs">
+      <DependentUpon>onHubModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="thingTyp.cs">
+      <DependentUpon>onHubModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="userTyp.cs">
+      <DependentUpon>onHubModel.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="onHubModel.edmx">
@@ -80,6 +112,12 @@
     <Content Include="onHubModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>onHubModel.Context.cs</LastGenOutput>
+      <DependentUpon>onHubModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="onHubModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>onHubModel.edmx</DependentUpon>
+      <LastGenOutput>onHubModel.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>
