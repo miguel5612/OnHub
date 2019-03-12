@@ -6,97 +6,47 @@
 <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
   <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-
-  <style type="text/css">
-  .header h1#logo {
-    display: inline=block;
-    height: 150px;
-    float: left;
-    margin-left:50px;
-    font-family: "Oswald", sans-serif;
-    font-size: 60px;
-    color: white;
-    font-weight: 400;
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    -ms-transition: all 0.3s;
-    -o-transition: all 0.3s;
-    transition: all 0.3s;
-    margin-left: 7%;
-    width: 9%;
-    margin-top: 11px;
-    margin-bottom: 11px;
-}
-  .btnRegister
-  {
-    border:none;
-    margin-top: 11px;
-    background-color: lightcoral;
-    color: white;
-    border-radius: 10px;
-    font-weight: bold;
-    width: 129%;
-    height: 42px;
-    margin-bottom: 11px;
-  }
-  .lnkNav
-  {
-    margin: 11px;
-  }
-    nav.navbar-findcond { background: #fff; border-color: #ccc; box-shadow: 0 0 2px 0 #ccc; }
-  }
-  }
-nav.navbar-findcond a { color: #f14444; }
-nav.navbar-findcond ul.navbar-nav a { color: #f14444; border-style: solid; border-width: 0 0 2px 0; border-color: #fff; }
-nav.navbar-findcond ul.navbar-nav a:hover,
-nav.navbar-findcond ul.navbar-nav a:visited,
-nav.navbar-findcond ul.navbar-nav a:focus,
-nav.navbar-findcond ul.navbar-nav a:active { background: #fff; }
-nav.navbar-findcond ul.navbar-nav a:hover { border-color: #f14444; }
-nav.navbar-findcond li.divider { background: #ccc; }
-nav.navbar-findcond button.navbar-toggle { background: #f14444; border-radius: 2px; }
-nav.navbar-findcond button.navbar-toggle:hover { background: #999; }
-nav.navbar-findcond button.navbar-toggle > span.icon-bar { background: #fff; }
-nav.navbar-findcond ul.dropdown-menu { border: 0; background: #fff; border-radius: 4px; margin: 4px 0; box-shadow: 0 0 4px 0 #ccc; }
-nav.navbar-findcond ul.dropdown-menu > li > a { color: #444; }
-nav.navbar-findcond ul.dropdown-menu > li > a:hover { background: #f14444; color: #fff; }
-nav.navbar-findcond span.badge { background: #f14444; font-weight: normal; font-size: 11px; margin: 0 4px; }
-nav.navbar-findcond span.badge.new { background: rgba(255, 0, 0, 0.8); color: #fff; }
-
-  </style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="nav.css">
+<link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body>
-<nav class="navbar navbar-findcond navbar-fixed-top">
+<div class="row">
+  <div class="col-lg-11 col-md-11 col-sm-12">
+    <nav class="navbar  navbar-findcond navbar-fixed-top">
 
-        <h1 id="logo"><img style="width:9%" src="logo.png"></h1>
-    <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
-        <span class="sr-only">Toggle navigation</span>
+    <div class="container-fluid">
+          <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
+        <span class="icon-bar"></span> 
       </button>
-    </div>
-    <div class="collapse navbar-collapse" id="navbar">
-      <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown">
-
-          <li class="lnkNav"><a href="">Pagina principal</a></li>
-          <li class="lnkNav"><a href="">Servicios</a></li>
-          <li class="lnkNav"><a href="">Acerca de nosotros</a></li>
-          <li class="lnkNav"><a href="">Contacto</a></li>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="#"><i class="fa fa-fw fa-tag"></i> <span class="badge">Music</span> sayfası <span class="badge">Video</span> sayfasında etiketlendi</a></li>
-            
-          </ul>
-        </li>        
-        <li class="dropdown">
-          <button class="btnRegister">Registrarse</button>    
-        </li>
-      </ul>
-    </div>
+ 
+         <a class="nav-brand" id="logo">
+          <img class="img-logo" src="logo.png">
+        </a>
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="nav navbar-nav navbar-right"> 
+            <li class="lnkNav nav-item active"><a class="nav-link" href="">Pagina principal</a></li>
+            <li class="lnkNav nav-item"><a class="nav-link" href="">Servicios</a></li>
+            <li class="lnkNav nav-item"><a class="nav-link" href="">Acerca de nosotros</a></li>
+            <li class="lnkNav nav-item"><a class="nav-link" href="">Contacto</a></li>
+            <ul class="dropdown-menu" role="menu">
+                    
+        </ul>
+          <li class="">
+            <button class="btnRegister">Registrarse</button>    
+          </li>
+        </ul>
+      </div>
+      
+        </div>
   </div>
 </nav>
+  </div>
+</div>
+
 </body>
 </html>

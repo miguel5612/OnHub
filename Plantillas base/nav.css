@@ -1,0 +1,86 @@
+.navbar-fixed-top.scrolled {
+  background-color: #fff !important;
+  transition: background-color 200ms linear;
+}
+
+.navbar
+{
+  display:flex;
+}
+#navbar
+{
+  float:right;
+    margin-right: 39px;
+}
+.logo
+{
+  margin:0;
+  padding:0;
+}
+.img-logo
+{
+  margin-top:1%;
+  width:11%;
+}
+.brand
+{
+  display: inline;
+  margin-top:0;
+}
+.header h1#logo {
+    display: inline=block;
+    height: 150px;
+    float: left;
+    margin-left:50px;
+    font-family: "Oswald", sans-serif;
+    font-size: 60px;
+    color: white;
+    font-weight: 400;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    margin-left: 7%;
+    width: 9%;
+    margin-top: 11px;
+    margin-bottom: 11px;
+}
+  .btnRegister
+  {
+    border:none;
+    margin-top: 18%;
+    background-color: white;
+    color: blue;
+    border-radius: 10px;
+    font-weight: bold;
+    width: 129%;
+    height: 42px;
+    margin-bottom: 18%;
+  }
+  .lnkNav
+  {
+    margin: 11px;
+  }
+    nav.navbar-findcond {
+     border-color: white;
+      box-shadow: 0 0 2px 0 white; 
+    }
+  }
+  }
+nav.navbar-findcond a { color: #f14444; }
+nav.navbar-findcond ul.navbar-nav a { color: white; border-radius: 10px ;order-style: solid; border-width: 0 0 2px 0; border-color: transparent; }
+nav.navbar-findcond ul.navbar-nav a:hover,
+nav.navbar-findcond ul.navbar-nav a:visited,
+nav.navbar-findcond ul.navbar-nav a:focus,
+nav.navbar-findcond ul.navbar-nav a:active { background: lightblue; }
+nav.navbar-findcond ul.navbar-nav a:hover { border-color: white; }
+nav.navbar-findcond li.divider { background: #ccc; }
+nav.navbar-findcond button.navbar-toggle { background: #f14444; border-radius: 2px; }
+nav.navbar-findcond button.navbar-toggle:hover { background: #999; }
+nav.navbar-findcond button.navbar-toggle > span.icon-bar { background: #fff; }
+nav.navbar-findcond ul.dropdown-menu { border: 0; background: #fff; border-radius: 4px; margin: 4px 0; box-shadow: 0 0 4px 0 #ccc; }
+nav.navbar-findcond ul.dropdown-menu > li > a { color: #444; }
+nav.navbar-findcond ul.dropdown-menu > li > a:hover { background: #f14444; color: #fff; }
+nav.navbar-findcond span.badge { background: #f14444; font-weight: normal; font-size: 11px; margin: 0 4px; }
+nav.navbar-findcond span.badge.new { background: rgba(255, 0, 0, 0.8); color: #fff; }
