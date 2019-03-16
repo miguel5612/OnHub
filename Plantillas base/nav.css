@@ -23,6 +23,10 @@
     width: 3%;
     border-radius: 40%;
 }
+#divNav
+{
+  padding-bottom: 5%;
+}
 .brand
 {
   display: inline;
