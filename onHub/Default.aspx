@@ -9,7 +9,7 @@
                 <h1 id="logoParagraph">Onmotica.com</h1>
                 <p>
                     Onmotica es la plataforma web en la cual puedes registrar todos tus dispositivos, 
-                    dispositivos como sistemas de supervision y apagado remoto, estaciones metereologicas,
+                    dispositivos como sistemas de supervision y apagado remoto,
                   medidores de temperatura, humedad, corriente, voltaje, potencia, lo que tu quieras,
                   puedes personalizarlo, darle tu estilo y recibir a diario reportes del estado de tus equipos.
                 </p>
