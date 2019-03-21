@@ -4,7 +4,7 @@
 
     <div class="container" id="divBody">
 
-        <div class="col-md-4">
+        <div class="col-md-6">
             <div id="divBody">
                 <h1 id="logoParagraph">Onmotica.com</h1>
                 <p>
@@ -17,7 +17,7 @@
         </div>
 
 
-        <div class="col-md-8">
+        <div class="col-md-6">
 
             <div id="myCarousel" class="carousel slide" data-ride="carousel">
                 <!-- Indicators -->

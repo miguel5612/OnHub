@@ -13,6 +13,9 @@
 
 #myCarousel {
     width: 90rem;
+    margin-right: 0;
+    padding-right: 0;
+    float: right;
 }
 
 .carousel-image {

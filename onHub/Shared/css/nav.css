@@ -3,9 +3,18 @@
   transition: background-color 200ms linear;
 }
 
-.navbar
+.container-navbar
 {
-  display:flex;
+    width:92%;
+    margin-left:4%;
+}
+
+.navbar-header{
+    width:100%;
+}
+
+.navbar {
+    display: flex;
 }
 #navbar
 {

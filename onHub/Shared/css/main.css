@@ -1,6 +1,5 @@
-body
-{
-	background-color:  rgba(156,68,197,1)!important;
+body {
+    background-color: rgba(73,155,234,0.9) !important;
 }
 .row
 {
@@ -14,4 +13,15 @@ body
 .body-content
 {
     width:100%!important;
+}
+p
+{
+    color:white;
+    font-size:3rem;
+}
+h1
+{
+    color:white!important;
+    font-weight:bold!important;
+    font-size:10rem;
 }
