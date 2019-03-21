@@ -75,8 +75,8 @@
             <li class="lnkNav nav-item"><a class="nav-link" href="">Contacto</a></li>
             <ul class="dropdown-menu" role="menu">                  
         </ul>
-          <li class="">
-            <button class="btnRegister" onclick="location.href = '/login';">Registrarse</button>    
+          <li class=""> 
+              <asp:Button ID="Button1" CssClass="btnRegister" OnClick="Button1_Click"  runat="server" Text="Registrarse" />
           </li>
         </ul>
       </div>
