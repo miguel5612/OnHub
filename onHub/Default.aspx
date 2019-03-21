@@ -2,7 +2,7 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 	
-	<link href="Content/Default.css" rel="stylesheet" />
+<%--	<link href="Content/Default.css" rel="stylesheet" />
 
 	<header>
 
@@ -52,5 +52,5 @@
 	<h1 class="display-4">Full Page Image Slider</h1>
 	<p class="lead">The background images for the slider are set directly in the HTML using inline CSS. The images in this snippet are from <a href="https://unsplash.com">Unsplash</a>, taken by <a href="https://unsplash.com/@joannakosinska">Joanna Kosinska</a>!</p>
   </div>
-</section>
+</section>--%>
  </asp:Content>

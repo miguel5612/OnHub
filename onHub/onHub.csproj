@@ -289,6 +289,15 @@
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
     <Content Include="setPathLog.aspx" />
+    <Content Include="Shared\Bootstrap\3.4.0\bootstrap.min.css" />
+    <Content Include="Shared\Bootstrap\3.4.0\bootstrap.min.js" />
+    <Content Include="Shared\Bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Shared\Bootstrap\3.4.0\jquery.min.js" />
+    <Content Include="Shared\css\index.css" />
+    <Content Include="Shared\css\main.css" />
+    <Content Include="Shared\css\nav.css" />
+    <Content Include="Shared\image\logo.jpg" />
+    <Content Include="Shared\image\logo.png" />
     <Content Include="Static\Images\airQ.jpg" />
     <Content Include="Static\Images\powerMeter.jpg" />
     <Content Include="Static\Images\SSAR3D.jpg" />
@@ -520,6 +529,10 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Shared\Bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Shared\Bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Shared\Bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Shared\Bootstrap\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
