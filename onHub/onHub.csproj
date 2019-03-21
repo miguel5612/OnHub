@@ -296,8 +296,11 @@
     <Content Include="Shared\css\index.css" />
     <Content Include="Shared\css\main.css" />
     <Content Include="Shared\css\nav.css" />
+    <Content Include="Shared\image\Slider\image2.jpg" />
+    <Content Include="Shared\image\Slider\image3.jpg" />
     <Content Include="Shared\image\logo.jpg" />
     <Content Include="Shared\image\logo.png" />
+    <Content Include="Shared\image\Slider\image1.jpg" />
     <Content Include="Static\Images\airQ.jpg" />
     <Content Include="Static\Images\powerMeter.jpg" />
     <Content Include="Static\Images\SSAR3D.jpg" />

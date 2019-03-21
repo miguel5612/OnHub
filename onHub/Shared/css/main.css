@@ -1,8 +1,17 @@
 body
 {
-	background-color:  rgba(156,68,197,1);
+	background-color:  rgba(156,68,197,1)!important;
 }
 .row
 {
 	padding:2%;
+}
+.navbar {
+    border: 0!important;
+    border-color: transparent !important;
+    box-shadow:none!important;
+}
+.body-content
+{
+    width:100%!important;
 }

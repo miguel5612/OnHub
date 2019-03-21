@@ -16,27 +16,44 @@
 		<%: Scripts.Render("~/bundles/modernizr") %>
 	</asp:PlaceHolder>
 
-	<%--<webopt:bundlereference runat="server" path="~/Content/css" />	
-	<script src="Scripts/jquery-3.3.1.min.js"></script>--%>
-
 
 	<link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-
-
-
     <link href="Shared/css/nav.css" rel="stylesheet" />
     <link href="Shared/css/main.css" rel="stylesheet" />
-    <link href="Shared/css/index.css" rel="stylesheet" />
-    
-    <script src="Shared/Bootstrap/3.4.0/jquery.min.js"></script>
+    <link href="Shared/css/index.css" rel="stylesheet" />    
     <link href="Shared/Bootstrap/3.4.0/bootstrap.min.css" rel="stylesheet" />
+    
+    <script src="Shared/Bootstrap/3.4.0/jquery.min.js"></script>	
     <script src="Shared/Bootstrap/3.4.0/bootstrap.min.js"></script>
-
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-131597794-1"></script>
+	<script src="Scripts/gtag.js"></script>	
 
 </head>
 <body>
 <div class="row"> 
-  <div class="col-lg-11 col-md-11 col-sm-12" id="divNav">
+    <form runat="server">
+		<asp:ScriptManager runat="server">
+			<Scripts>
+				<%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+				<%--Framework Scripts--%>
+				<asp:ScriptReference Name="MsAjaxBundle" />
+				<asp:ScriptReference Name="jquery" />
+				<asp:ScriptReference Name="bootstrap" />
+				<asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+				<asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+				<asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+				<asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+				<asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+				<asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+				<asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+				<asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+				<asp:ScriptReference Name="WebFormsBundle" />
+				<%--Site Scripts--%>
+			</Scripts>
+		</asp:ScriptManager>
+	
+          <div class="col-lg-11 col-md-11 col-sm-12" id="divNav">
     <nav class="navbar  navbar-findcond navbar-fixed-top">
 
     <div class="container-fluid">
@@ -68,86 +85,6 @@
   </div>
 </nav>
  </div>
-
-<div class="col-md-4" >
-  <div id="divBody">
-    <h1 id="logoParagraph">Onmotica.com</h1>
-    <p>Onmotica es la plataforma web en la cual puedes registrar todos tus dispositivos, 
-    dispositivos como sistemas de supervision y apagado remoto, estaciones metereologicas,
-  medidores de temperatura, humedad, corriente, voltaje, potencia, lo que tu quieras,
-  puedes personalizarlo, darle tu estilo y recibir a diario reportes del estado de tus equipos.</p>
-  </div>
-</div>
-
-
-<div class="col-md-8">
-
-
-<div class="container" id="divBody">
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
-
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner">
-      <div class="item active">
-        <img src="https://www.w3schools.com/bootstrap/la.jpg" alt="Los Angeles" style="width:100%;">
-      </div>
-
-      <div class="item">
-        <img src="https://www.w3schools.com/bootstrap/chicago.jpg" alt="Chicago" style="width:100%;">
-      </div>
-    
-      <div class="item">
-        <img src="https://www.w3schools.com/bootstrap/ny.jpg" alt="New york" style="width:100%;">
-      </div>
-    </div>
-
-    <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right"></span>
-      <span class="sr-only">Next</span>
-    </a>
-
-  </div>
-
-</div>
-
-  </div>
-
-    <form runat="server">
-		<asp:ScriptManager runat="server">
-			<Scripts>
-				<%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
-				<%--Framework Scripts--%>
-				<asp:ScriptReference Name="MsAjaxBundle" />
-				<asp:ScriptReference Name="jquery" />
-				<asp:ScriptReference Name="bootstrap" />
-				<asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
-				<asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
-				<asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
-				<asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
-				<asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
-				<asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
-				<asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
-				<asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
-				<asp:ScriptReference Name="WebFormsBundle" />
-				<%--Site Scripts--%>
-			</Scripts>
-		</asp:ScriptManager>
-		
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-131597794-1"></script>
-	<script src="Scripts/gtag.js"></script>
-		
 		<div class="container body-content">
 			<asp:ContentPlaceHolder ID="MainContent" runat="server">
 			</asp:ContentPlaceHolder>
@@ -156,13 +93,8 @@
 				<p>&copy; <%: DateTime.Now.Year %> - AirQ App</p>
 			</footer>
 		</div>
-
 	</form>
-	<script src="Scripts/jquery-3.3.1.slim.js"></script>
-	<script src="Scripts/popper.min.js"></script>
-<script src="Scripts/bootstrap.min.js"></script>
     </div>
-
 </body>
 </html>
 
