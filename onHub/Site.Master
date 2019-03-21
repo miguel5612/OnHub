@@ -76,7 +76,7 @@
             <ul class="dropdown-menu" role="menu">                  
         </ul>
           <li class="">
-            <button class="btnRegister">Registrarse</button>    
+            <button class="btnRegister" onclick="location.href = '/login';">Registrarse</button>    
           </li>
         </ul>
       </div>
