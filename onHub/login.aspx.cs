@@ -27,7 +27,7 @@ namespace airQ
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
-            string pSQL = "SELECT * FROM users WHERE UserName = '" + txtUser.Text + "' AND pass = '" + txtPassword.Text + "'";
+            string pSQL = "SELECT * FROM onUser WHERE UserName = '" + txtUser.Text + "' AND password = '" + txtPassword.Text + "'";
             SqlDataReader dr = onmotica.fetchReader(pSQL);
             while (dr.Read())
             {
