@@ -9,6 +9,16 @@
     <link href="Shared/dashboard/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet" />
     <link href="Shared/dashboard/assets/css/argon.css" rel="stylesheet" />
 
+    <style>
+        .row
+        {            
+            margin-top: 13%;
+        }
+        .body-content
+        {
+        }
+    </style>
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 	
@@ -39,7 +49,7 @@
             <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <div class="media align-items-center">
                 <span class="avatar avatar-sm rounded-circle">
-                  <img alt="Image placeholder" src="./assets/img/theme/team-4-800x800.jpg">
+                  <img alt="Image placeholder" src="Shared/dashboard/assets/img/theme/team-4-800x800.jpg">
                 </span>
                 <div class="media-body ml-2 d-none d-lg-block">
                   <span class="mb-0 text-sm  font-weight-bold">Jessica Jones</span>

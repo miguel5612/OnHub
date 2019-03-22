@@ -36,7 +36,8 @@ namespace airQ
         void Page_LoadComplete(object sender, EventArgs e)
         {
 
-            mqttConection();
+           // mqttConection();
+           // mqttConection();
         }
         public void mqttConection()
         {

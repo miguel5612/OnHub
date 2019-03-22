@@ -37,37 +37,6 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <asp:HiddenField  ID="txtData1" Value="0" runat="server"></asp:HiddenField>
-        <asp:HiddenField  ID="txtData2" Value="0" runat="server"></asp:HiddenField>
-        <asp:HiddenField  ID="txtData3" Value="0" runat="server"></asp:HiddenField>
-        <asp:HiddenField  ID="txtData4" Value="0" runat="server"></asp:HiddenField>
-        <asp:HiddenField  ID="txtData5" Value="0" runat="server"></asp:HiddenField>
-        <asp:HiddenField  ID="txtData6" Value="0" runat="server"></asp:HiddenField>
-        <asp:HiddenField  ID="txtData7" Value="0" runat="server"></asp:HiddenField>
-        <asp:HiddenField  ID="txtData8" Value="0" runat="server"></asp:HiddenField>
-        <asp:HiddenField  ID="txtData9" Value="0" runat="server"></asp:HiddenField>
-         <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" runat="server" href="~/">AirQ</a>
-                </div>
-                <div class="navbar-collapse collapse">
-                     <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/dashboard">pagina prinicipal</a></li>
-                        <li><a runat="server" class="dropdown-toggle" data-toggle="dropdown">dispositivos</a>                        
-                         <ul id="menu" runat="server" class="dropdown-menu"></ul></li>
-                        <li><a runat="server" href="~/registerDevice">registrar nuevo dispositivo</a></li>
-                         <li><a runat="server" href="~/editDevice">ver/editar dispositivos</a></li>
-                         <li><a runat="server" href="~/logout">cerrar sesion</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
         <div class="container body-content">
         <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
@@ -75,7 +44,7 @@
         </div>
             <hr />
             <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - AirQ App</p>
+                <p>&copy; <%: DateTime.Now.Year %> - onHub App</p>
             </footer>
         </div>
     </form>
