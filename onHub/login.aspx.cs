@@ -27,22 +27,9 @@ namespace airQ
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
-            string pSQL = "SELECT * FROM onUser WHERE UserName = '" + txtUser.Text + "' AND password = '" + txtPassword.Text + "'";
-            SqlDataReader dr = onmotica.fetchReader(pSQL);
-            while (dr.Read())
-            {
-                if (!dr.HasRows || (dr.IsDBNull(0)))
-                {
-                    lblError.Text = "Username or password error, try again";
-                    lblError.ForeColor = Color.Red;
-                }
-                else
-                {
-                    Session["UsrID"] = dr["IDUser"].ToString();
-                    Session["UsrName"] = dr["UserName"].ToString();
-                    Response.Redirect("/dashboard");
-                }
-            }
+            var usr = txtUser.Text;
+            var password = txtPassword.Text;
+            onmotica.login(Session, Response, usr, password);
         }
 
         protected void TextBox1_TextChanged(object sender, EventArgs e)

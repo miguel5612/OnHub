@@ -36,15 +36,15 @@ namespace airQ
             {
                 if (usuario!= "" & password != "")
                 {
-                    string pSQL = "SELECT * FROM users WHERE UserName = '" + txtUserName.Text + "'";
+                    string pSQL = "SELECT * FROM onUser WHERE userName = '" + txtUserName.Text + "'";
                     SqlDataReader dr = onmotica.fetchReader(pSQL);
                     while (dr.Read())
                     {
                         if (dr.HasRows || (dr.IsDBNull(0)))
                         {
-                            if (dr["UserName"] != null)
+                            if (dr["userName"] != null)
                             {
-                                if (dr["UserName"].ToString() != "")
+                                if (dr["userName"].ToString() != "")
                                 {
                                     lblError.Text = "Usuario ya registrado, prueba con otro nombre de usuario";
                                     lblError.ForeColor = Color.Red;
@@ -59,29 +59,18 @@ namespace airQ
                     }
                     if(bandera)
                     {
-                        pSQL = "INSERT INTO [users]  ([UserName], [Pass], [RegisterDate], [IsActiv]) VALUES ('@UserName','@Pass','@RegisterDate',@IsActiv)";
+                        pSQL = "INSERT INTO [onUser]  ([userName], [password], [userTypid], [creationDate]) VALUES ('@UserName','@Pass','@userTypid',@RegisterDate)";
                         pSQL = pSQL.Replace("@UserName", usuario);
                         pSQL = pSQL.Replace("@Pass", password);
                         pSQL = pSQL.Replace("@RegisterDate", onmotica.convertD2IDateTime(DateTime.Now));
-                        pSQL = pSQL.Replace("@IsActiv", "1");
+                        pSQL = pSQL.Replace("@userTypid", "1");
                         onmotica.executeSQL(pSQL);
-                        login(Session, Response, usuario, password);
+                        onmotica.login(Session, Response, usuario, password);
                     }
                 }
 
             }
 
-        }
-        public static void login(System.Web.SessionState.HttpSessionState Session, HttpResponse Response, string username, string password)
-        {
-            string pSQL = "SELECT * FROM users WHERE UserName = '" + username + "' AND pass = '" + password + "'";
-            SqlDataReader dr = onmotica.fetchReader(pSQL);
-            while (dr.Read())
-            {
-                    Session["UsrID"] = dr["IDUser"].ToString();
-                    Session["UsrName"] = dr["UserName"].ToString();
-                    Response.Redirect("/dashboard");
-            }
         }
     }    
 }

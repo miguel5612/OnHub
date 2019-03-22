@@ -47,6 +47,19 @@ namespace airQ.App_Code
             }
             return folderPath;
         }
+
+        public static void login(System.Web.SessionState.HttpSessionState Session, HttpResponse Response, string username, string password)
+        {
+            string pSQL = "SELECT * FROM onUser WHERE userName = '" + username + "' AND password = '" + password + "'";
+            SqlDataReader dr = onmotica.fetchReader(pSQL);
+            while (dr.Read())
+            {
+                Session["UsrID"] = dr["id"].ToString();
+                Session["UsrName"] = dr["userName"].ToString();
+                Session["userTypId"] = dr["userTypID"].ToString();
+                Response.Redirect("/dashboard");
+            }
+        }
         public static void updateAppFolder(string Path)
         {
             executeSQL("UPDATE ServerInfo SET AppFolderPath = '"+ Path + "' WHERE ServerInfoID = 1");
