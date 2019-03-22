@@ -269,7 +269,7 @@ namespace airQ.App_Code
         public static void executeSQL(string query)
         {
             SqlCommand cmd = new SqlCommand();
-            SqlConnection myConn = new SqlConnection(ConfigurationManager.ConnectionStrings["AirQConnectionString"].ConnectionString);
+            SqlConnection myConn = new SqlConnection(ConfigurationManager.ConnectionStrings["onHubConnectionString"].ConnectionString);
             myConn.Open();
             cmd.CommandText = query;
             cmd.Connection = myConn;
@@ -279,17 +279,17 @@ namespace airQ.App_Code
         public static void executeSQLMonitor3D(string query)
         {
             SqlCommand cmd = new SqlCommand();
-            SqlConnection myConn = new SqlConnection(ConfigurationManager.ConnectionStrings["3DMonitorConnectionString"].ConnectionString);
+            SqlConnection myConn = new SqlConnection(ConfigurationManager.ConnectionStrings["onHubConnectionString"].ConnectionString);
             myConn.Open();
             cmd.CommandText = query;
             cmd.Connection = myConn;
             cmd.ExecuteNonQuery();
             myConn.Close();
         }
-        public static void executeSQLAirQ(string query)
+        public static void executeSQLonHub(string query)
         {
             SqlCommand cmd = new SqlCommand();
-            SqlConnection myConn = new SqlConnection(ConfigurationManager.ConnectionStrings["AirQConnectionString"].ConnectionString);
+            SqlConnection myConn = new SqlConnection(ConfigurationManager.ConnectionStrings["onHubConnectionString"].ConnectionString);
             myConn.Open();
             cmd.CommandText = query;
             cmd.Connection = myConn;
@@ -299,7 +299,7 @@ namespace airQ.App_Code
         public static SqlDataReader fetchReader(string query)
         {
             SqlCommand cmd = new SqlCommand();
-            SqlConnection myConn = new SqlConnection(ConfigurationManager.ConnectionStrings["AirQConnectionString"].ConnectionString);
+            SqlConnection myConn = new SqlConnection(ConfigurationManager.ConnectionStrings["onHubConnectionString"].ConnectionString);
             myConn.Open();
             SqlCommand myCmd = new SqlCommand(query, myConn);
             SqlDataReader dr = myCmd.ExecuteReader(CommandBehavior.CloseConnection);
@@ -308,7 +308,7 @@ namespace airQ.App_Code
 
         public static DataSet fetchData(string query)
         {
-            SqlConnection myConn = new SqlConnection(ConfigurationManager.ConnectionStrings["AirQConnectionString"].ConnectionString);
+            SqlConnection myConn = new SqlConnection(ConfigurationManager.ConnectionStrings["onHubConnectionString"].ConnectionString);
             SqlDataAdapter myAdapter = new SqlDataAdapter(query, myConn);
             DataSet myData = new DataSet();
             myAdapter.Fill(myData);
@@ -317,7 +317,7 @@ namespace airQ.App_Code
 
         public static object fetchScalar(string query)
         {
-            SqlConnection myConn = new SqlConnection(ConfigurationManager.ConnectionStrings["AirQConnectionString"].ConnectionString);
+            SqlConnection myConn = new SqlConnection(ConfigurationManager.ConnectionStrings["onHubConnectionString"].ConnectionString);
             SqlCommand myCmd = new SqlCommand(query, myConn);
             myConn.Open();
             object scalar = myCmd.ExecuteScalar();
@@ -327,7 +327,7 @@ namespace airQ.App_Code
 
         public static object fetchScalar(string query, int timeToWait)
         {
-            SqlConnection myConn = new SqlConnection(ConfigurationManager.ConnectionStrings["AirQConnectionString"].ConnectionString);
+            SqlConnection myConn = new SqlConnection(ConfigurationManager.ConnectionStrings["onHubConnectionString"].ConnectionString);
             SqlCommand myCmd = new SqlCommand(query, myConn);
             myConn.Open();
             myCmd.CommandTimeout = timeToWait;
@@ -338,7 +338,7 @@ namespace airQ.App_Code
 
         public static SqlDataReader fetchReader(SqlCommand myCmd)
         {
-            SqlConnection myConn = new SqlConnection(ConfigurationManager.ConnectionStrings["AirQConnectionString"].ConnectionString);
+            SqlConnection myConn = new SqlConnection(ConfigurationManager.ConnectionStrings["onHubConnectionString"].ConnectionString);
             myCmd.Connection = myConn;
             myConn.Open();
             return myCmd.ExecuteReader(CommandBehavior.CloseConnection);
@@ -346,7 +346,7 @@ namespace airQ.App_Code
 
         public static DataSet fetchData(SqlCommand myCmd)
         {
-            SqlConnection myConn = new SqlConnection(ConfigurationManager.ConnectionStrings["AirQConnectionString"].ConnectionString);
+            SqlConnection myConn = new SqlConnection(ConfigurationManager.ConnectionStrings["onHubConnectionString"].ConnectionString);
             myCmd.Connection = myConn;
             SqlDataAdapter myAdapter = new SqlDataAdapter(myCmd);
             DataSet myData = new DataSet();
@@ -356,7 +356,7 @@ namespace airQ.App_Code
 
         public static object fetchScalar(SqlCommand myCmd)
         {
-            SqlConnection myConn = new SqlConnection(ConfigurationManager.ConnectionStrings["AirQConnectionString"].ConnectionString);
+            SqlConnection myConn = new SqlConnection(ConfigurationManager.ConnectionStrings["onHubConnectionString"].ConnectionString);
             myCmd.Connection = myConn;
             myConn.Open();
             myCmd.CommandTimeout = 32400; //32400 sec = 9 hours
