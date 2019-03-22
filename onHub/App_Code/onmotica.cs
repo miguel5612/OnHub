@@ -180,7 +180,7 @@ namespace airQ.App_Code
 
 
                     pSQL = pSQL.Replace("@data", data);
-                    executeSQLAirQ(pSQL);
+                    executeSQLonHub(pSQL);
 
                 }
                 else if (topic.Contains("printer"))
