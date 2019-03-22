@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/dashboard.Master" AutoEventWireup="true" CodeBehind="dashboard.aspx.cs" Inherits="airQ.dashboard1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-	<script src="Scripts/dash.js"></script>
+	<!--<script src="Scripts/dash.js"></script>-->
 	<script src="Scripts/jquery.signalR-2.4.0.min.js"></script>
 	<script src="signalr/hubs"></script>
 	<script src="Scripts/websocket.js"></script>
