@@ -105,7 +105,7 @@ namespace airQ
             Session["deviceName" + btnID] = text;
 
             HtmlGenericControl li = new HtmlGenericControl("li");
-			menu.Controls.Add(li);
+			//menu.Controls.Add(li);
 
             HyperLink openDeviceLink = new HyperLink();
 			openDeviceLink.CssClass = btnID;
