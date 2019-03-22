@@ -59,7 +59,7 @@ namespace airQ
                     }
                     if(bandera)
                     {
-                        pSQL = "INSERT INTO [onUser]  ([userName], [password], [userTypid], [creationDate]) VALUES ('@UserName','@Pass','@userTypid',@RegisterDate)";
+                        pSQL = "INSERT INTO [onUser]  ([userName], [password], [userTypid], [creationDate]) VALUES ('@UserName','@Pass','@userTypid','@RegisterDate')";
                         pSQL = pSQL.Replace("@UserName", usuario);
                         pSQL = pSQL.Replace("@Pass", password);
                         pSQL = pSQL.Replace("@RegisterDate", onmotica.convertD2IDateTime(DateTime.Now));
