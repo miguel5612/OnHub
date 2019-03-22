@@ -50,7 +50,7 @@ namespace airQ.App_Code
 
         public static void login(System.Web.SessionState.HttpSessionState Session, HttpResponse Response, string username, string password)
         {
-            string pSQL = "SELECT * FROM onUser WHERE userName = '" + username + "' AND password = '" + password + "'";
+            string pSQL = "SELECT * FROM [onUser] WHERE userName = '" + username + "' AND password = '" + password + "'";
             SqlDataReader dr = onmotica.fetchReader(pSQL);
             while (dr.Read())
             {
