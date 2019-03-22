@@ -17,6 +17,12 @@
         .body-content
         {
         }
+        body
+        {
+            width:100%;
+            padding:0;
+            margin:0;
+        }
     </style>
 
 </asp:Content>
@@ -490,5 +496,6 @@
 
     <script src="Shared/dashboard/assets/vendor/chart.js/dist/Chart.min.js"></script>
     <script src="Shared/dashboard/assets/vendor/chart.js/dist/Chart.extension.js"></script>
+    <script src="Shared/dashboard/assets/js/argon.js"></script>
 
 </asp:Content>
