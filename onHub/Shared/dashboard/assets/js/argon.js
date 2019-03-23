@@ -1,26 +1,6 @@
-/*!
+//addData(ordersChart, "random", Math.floor((Math.random() * 10) + 1))
+//addData(salesChart, "random", Math.floor((Math.random() * 10) + 1))
 
-=========================================================
-* Argon Dashboard - v1.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard
-* Copyright 2018 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/argon-dashboard/blob/master/LICENSE.md)
-
-* Coded by www.creative-tim.com
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
-
-//
-// Bootstrap Datepicker
-//
-
-//'use strict';
 
 var Datepicker = (function() {
 
@@ -50,12 +30,6 @@ var Datepicker = (function() {
 	}
 
 })();
-
-//
-// Icon code copy/paste
-//
-
-'use strict';
 
 var CopyIcon = (function() {
 
@@ -97,11 +71,7 @@ var CopyIcon = (function() {
 
 })();
 
-//
-// Form control
-//
 
-'use strict';
 
 var FormControl = (function() {
 
@@ -177,46 +147,7 @@ if($map.length) {
     google.maps.event.addDomListener(window, 'load', initMap);
 }
 
-// //
-// // Headroom - show/hide navbar on scroll
-// //
-//
-// 'use strict';
-//
-// var Headroom = (function() {
-//
-// 	// Variables
-//
-// 	var $headroom = $('#navbar-main');
-//
-//
-// 	// Methods
-//
-// 	function init($this) {
-//
-//     var headroom = new Headroom(document.querySelector("#navbar-main"), {
-//         offset: 300,
-//         tolerance: {
-//             up: 30,
-//             down: 30
-//         },
-//     });
-//
-//
-//
-// 	// Events
-//
-// 	if ($headroom.length) {
-// 		headroom.init();
-// 	}
-//
-// })();
 
-//
-// Navbar
-//
-
-'use strict';
 
 var Navbar = (function() {
 
@@ -259,10 +190,6 @@ var Navbar = (function() {
 
 })();
 
-
-//
-// Navbar collapse
-//
 
 
 var NavbarCollapse = (function() {
@@ -309,31 +236,6 @@ var NavbarCollapse = (function() {
 'use strict';
 
 var noUiSlider = (function() {
-
-	// Variables
-
-	// var $sliderContainer = $('.input-slider-container'),
-	// 		$slider = $('.input-slider'),
-	// 		$sliderId = $slider.attr('id'),
-	// 		$sliderMinValue = $slider.data('range-value-min');
-	// 		$sliderMaxValue = $slider.data('range-value-max');;
-
-
-	// // Methods
-	//
-	// function init($this) {
-	// 	$this.on('focus blur', function(e) {
-  //       $this.parents('.form-group').toggleClass('focused', (e.type === 'focus' || this.value.length > 0));
-  //   }).trigger('blur');
-	// }
-	//
-	//
-	// // Events
-	//
-	// if ($input.length) {
-	// 	init($input);
-	// }
-
 
 
 	if ($(".input-slider-container")[0]) {
@@ -387,11 +289,7 @@ var noUiSlider = (function() {
 
 })();
 
-//
-// Popover
-//
 
-'use strict';
 
 var Popover = (function() {
 
@@ -427,11 +325,6 @@ var Popover = (function() {
 
 })();
 
-//
-// Scroll to (anchor links)
-//
-
-'use strict';
 
 var ScrollTo = (function() {
 
@@ -906,91 +799,7 @@ var Charts = (function() {
 
 })();
 
-//
-// Orders chart
-//
 
-var OrdersChart = (function() {
-
-	//
-	// Variables
-	//
-
-	var $chart = $('#chart-orders');
-	var $ordersSelect = $('[name="ordersSelect"]');
-
-
-	//
-	// Methods
-	//
-
-	// Init chart
-	function initChart($chart) {
-
-		// Create chart
-		var ordersChart = new Chart($chart, {
-			type: 'bar',
-			options: {
-				scales: {
-					yAxes: [{
-						ticks: {
-							callback: function(value) {
-								if (!(value % 10)) {
-									//return '$' + value + 'k'
-									return value
-								}
-							}
-						}
-					}]
-				},
-				tooltips: {
-					callbacks: {
-						label: function(item, data) {
-							var label = data.datasets[item.datasetIndex].label || '';
-							var yLabel = item.yLabel;
-							var content = '';
-
-							if (data.datasets.length > 1) {
-								content += '<span class="popover-body-label mr-auto">' + label + '</span>';
-							}
-
-							content += '<span class="popover-body-value">' + yLabel + '</span>';
-							
-							return content;
-						}
-					}
-				}
-			},
-			data: {
-				labels: ['Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-				datasets: [{
-					label: 'Sales',
-					data: [25, 20, 30, 22, 17, 29]
-				}]
-			}
-		});
-
-		// Save to jQuery object
-		$chart.data('chart', ordersChart);
-	}
-
-
-	// Init chart
-	if ($chart.length) {
-		initChart($chart);
-	}
-
-})();
-
-//
-// Charts
-//
-
-'use strict';
-
-//
-// Sales chart
-//
 
 
 $(document).ready(function () {
@@ -1048,6 +857,55 @@ var salesChart = new Chart($chart, {
 });
 
 
+
+
+$chart = $('#chart-orders');
+var $ordersSelect = $('[name="ordersSelect"]');
+
+// Create chart
+var ordersChart = new Chart($chart, {
+    type: 'bar',
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    callback: function (value) {
+                        if (!(value % 10)) {
+                            //return '$' + value + 'k'
+                            return value
+                        }
+                    }
+                }
+            }]
+        },
+        tooltips: {
+            callbacks: {
+                label: function (item, data) {
+                    var label = data.datasets[item.datasetIndex].label || '';
+                    var yLabel = item.yLabel;
+                    var content = '';
+
+                    if (data.datasets.length > 1) {
+                        content += '<span class="popover-body-label mr-auto">' + label + '</span>';
+                    }
+
+                    content += '<span class="popover-body-value">' + yLabel + '</span>';
+
+                    return content;
+                }
+            }
+        }
+    },
+    data: {
+        labels: ['Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+        datasets: [{
+            label: 'Sales',
+            data: [25, 20, 30, 22, 17, 29]
+        }]
+    }
+});
+
+
 // Save to jQuery object
 
 $chart.data('chart', salesChart);
@@ -1063,8 +921,8 @@ function updateChart(data) {
 
 
 function addData(chart, label, data) {
-    salesChart.data.datasets[0].data = salesChart.data.datasets[0].data.slice(1);
-    salesChart.data.labels = salesChart.data.labels.slice(1);
+    chart.data.datasets[0].data = chart.data.datasets[0].data.slice(1);
+    chart.data.labels = chart.data.labels.slice(1);
     chart.data.labels.push(label);
     chart.data.datasets.forEach((dataset) => {
         dataset.data.push(data);
