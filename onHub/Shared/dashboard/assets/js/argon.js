@@ -20,7 +20,7 @@
 // Bootstrap Datepicker
 //
 
-'use strict';
+//'use strict';
 
 var Datepicker = (function() {
 
@@ -992,72 +992,82 @@ var OrdersChart = (function() {
 // Sales chart
 //
 
-var SalesChart = (function() {
 
-	// Variables
+$(document).ready(function () {
+    // Variables
 
-	var $chart = $('#chart-sales');
+    
 
+});
 
-	// Methods
-
-	function init($chart) {
-
-		var salesChart = new Chart($chart, {
-			type: 'line',
-			options: {
-				scales: {
-					yAxes: [{
-						gridLines: {
-							color: Charts.colors.gray[900],
-							zeroLineColor: Charts.colors.gray[900]
-						},
-						ticks: {
-							callback: function(value) {
-								if (!(value % 10)) {
-									return '' + value + 'ºC';
-								}
-							}
-						}
-					}]
-				},
-				tooltips: {
-					callbacks: {
-						label: function(item, data) {
-							var label = data.datasets[item.datasetIndex].label || '';
-							var yLabel = item.yLabel;
-							var content = '';
-
-							if (data.datasets.length > 1) {
-								content += '<span class="popover-body-label mr-auto">' + label + '</span>';
-							}
-
-							content += '<span class="popover-body-value">$' + yLabel + 'k</span>';
-							return content;
-						}
-					}
-				}
-			},
-			data: {
-				labels: ['May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-				datasets: [{
-					label: 'Performance',
-					data: [0, 100, 10, 30, 15, 40, 20, 60, 60]
-				}]
-			}
-		});
-
-		// Save to jQuery object
-
-		$chart.data('chart', salesChart);
-
-	};
+var $chart = $('#chart-sales');
 
 
-	// Events
+var salesChart = new Chart($chart, {
+    type: 'line',
+    options: {
+        scales: {
+            yAxes: [{
+                gridLines: {
+                    color: Charts.colors.gray[900],
+                    zeroLineColor: Charts.colors.gray[900]
+                },
+                ticks: {
+                    callback: function (value) {
+                        if (!(value % 10)) {
+                            return '' + value + 'ºC';
+                        }
+                    }
+                }
+            }]
+        },
+        tooltips: {
+            callbacks: {
+                label: function (item, data) {
+                    var label = data.datasets[item.datasetIndex].label || '';
+                    var yLabel = item.yLabel;
+                    var content = '';
 
-	if ($chart.length) {
-		init($chart);
-	}
+                    if (data.datasets.length > 1) {
+                        content += '<span class="popover-body-label mr-auto">' + label + '</span>';
+                    }
 
-})();
+                    content += '<span class="popover-body-value">$' + yLabel + 'k</span>';
+                    return content;
+                }
+            }
+        }
+    },
+    data: {
+        labels: ['May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+        datasets: [{
+            label: 'Performance',
+            data: [0, 100, 10, 30, 15, 40, 20, 60, 60]
+        }]
+    }
+});
+
+
+// Save to jQuery object
+
+$chart.data('chart', salesChart);
+
+
+function updateChart(data) {
+    var array = salesChart.data.datasets[0].data;
+    array.push(data);
+    array.slice(1);
+    salesChart.data.datasets[0].data = array;
+    salesChart.update();
+}
+
+
+function addData(chart, label, data) {
+    salesChart.data.datasets[0].data = salesChart.data.datasets[0].data.slice(1);
+    salesChart.data.labels = salesChart.data.labels.slice(1);
+    chart.data.labels.push(label);
+    chart.data.datasets.forEach((dataset) => {
+        dataset.data.push(data);
+    });
+    chart.update();
+}
