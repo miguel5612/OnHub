@@ -499,5 +499,11 @@
                 $('#popupAll').modal('show');       
             return;
         }
+        function HideModal()
+        {
+            $('#popupAll').modal('hide');
+            window.location.reload(true);
+            return false;
+        }
     </script>
 </asp:Content>

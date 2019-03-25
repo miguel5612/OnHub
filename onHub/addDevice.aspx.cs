@@ -30,7 +30,8 @@ namespace airQ
 
                 pSQL = pSQL.Replace("@deviceDateSubscription", onmotica.convertD2IDateTime(DateTime.Now));
                 onmotica.executeSQL(pSQL);
-                Response.Redirect("/dashboard");
+                //Response.Redirect("/dashboard");
+                ClientScript.RegisterClientScriptBlock(this.GetType(), "scriptCloseModal", "javascript:top.HideModal();", true);
             }
         }
     }
