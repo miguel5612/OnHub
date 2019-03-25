@@ -174,7 +174,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="dashboard.aspx" />
     <Content Include="Default.aspx" />
-    <Content Include="editDevice.aspx" />
+    <Content Include="addDevice.aspx" />
     <Content Include="external\404.html" />
     <Content Include="external\500.html" />
     <Content Include="external\base\breadcrumb.html" />
@@ -2094,12 +2094,12 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="editDevice.aspx.cs">
-      <DependentUpon>editDevice.aspx</DependentUpon>
+    <Compile Include="addDevice.aspx.cs">
+      <DependentUpon>addDevice.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="editDevice.aspx.designer.cs">
-      <DependentUpon>editDevice.aspx</DependentUpon>
+    <Compile Include="addDevice.aspx.designer.cs">
+      <DependentUpon>addDevice.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/dashboard.Master" AutoEventWireup="true" CodeBehind="editDevice.aspx.cs" Inherits="airQ.editDevice" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/dashboard.Master" AutoEventWireup="true" CodeBehind="addDevice.aspx.cs" Inherits="airQ.editDevice" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 	<div align="center">
 		 <caption><h2><ins><i>LISTA DE DISPOSITIVOS</i></ins></h2></caption>

@@ -12,7 +12,7 @@
     <style>
         .row
         {            
-            margin-top: 13%;
+            /*margin-top: 13%;*/
         }
         .body-content
         {
@@ -64,28 +64,28 @@
             </a>
             <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
               <div class=" dropdown-header noti-title">
-                <h6 class="text-overflow m-0">Welcome!</h6>
+                <h6 class="text-overflow m-0">Bienvenid@!</h6>
               </div>
-              <a href="./examples/profile.html" class="dropdown-item">
+              <a href="#" onclick="showPopUp('Agregar Dispositivo','addDevice')" class="dropdown-item">
                 <i class="ni ni-single-02"></i>
-                <span>My profile</span>
+                <span>Agregar dispositivo</span>
               </a>
-              <a href="./examples/profile.html" class="dropdown-item">
+              <a onclick="showPopUp('Mi cuenta','myAccount')" class="dropdown-item">
                 <i class="ni ni-settings-gear-65"></i>
-                <span>Settings</span>
+                <span>Configuraciones de la cuenta</span>
               </a>
-              <a href="./examples/profile.html" class="dropdown-item">
+              <a onclick="showPopUp('Configuracion de notificaciones','notifySettings')" class="dropdown-item">
                 <i class="ni ni-calendar-grid-58"></i>
-                <span>Activity</span>
+                <span>Notificaciones</span>
               </a>
-              <a href="./examples/profile.html" class="dropdown-item">
+              <a onclick="showPopUp('Tutoriales','tutorials')" class="dropdown-item">
                 <i class="ni ni-support-16"></i>
-                <span>Support</span>
+                <span>Tutoriales</span>
               </a>
               <div class="dropdown-divider"></div>
               <a href="#!" class="dropdown-item">
                 <i class="ni ni-user-run"></i>
-                <span>Logout</span>
+                <span>Cerrar sesion</span>
               </a>
             </div>
           </li>
@@ -194,20 +194,20 @@
             <div class="card-header bg-transparent">
               <div class="row align-items-center">
                 <div class="col">
-                  <h6 class="text-uppercase text-light ls-1 mb-1">Overview</h6>
-                  <h2 class="text-white mb-0">Sales value</h2>
+                  <h6 class="text-uppercase text-light ls-1 mb-1">Supervision</h6>
+                  <h2 class="text-white mb-0">Control voltaje/corriente</h2>
                 </div>
                 <div class="col">
                   <ul class="nav nav-pills justify-content-end">
-                    <li class="nav-item mr-2 mr-md-0" data-toggle="chart" data-target="#chart-sales" data-update='{"data":{"datasets":[{"data":[0, 20, 10, 30, 15, 40, 20, 60, 60]}]}}' data-prefix="$" data-suffix="k">
+                    <li class="nav-item mr-2 mr-md-0">
                       <a href="#" class="nav-link py-2 px-3 active" data-toggle="tab">
-                        <span class="d-none d-md-block">Month</span>
+                        <span class="d-none d-md-block">Corriente</span>
                         <span class="d-md-none">M</span>
                       </a>
                     </li>
-                    <li class="nav-item" data-toggle="chart" data-target="#chart-sales" data-update='{"data":{"datasets":[{"data":[0, 20, 5, 25, 10, 30, 15, 40, 40]}]}}' data-prefix="$" data-suffix="k">
+                    <li class="nav-item">
                       <a href="#" class="nav-link py-2 px-3" data-toggle="tab">
-                        <span class="d-none d-md-block">Week</span>
+                        <span class="d-none d-md-block">Voltaje</span>
                         <span class="d-md-none">W</span>
                       </a>
                     </li>
@@ -229,8 +229,8 @@
             <div class="card-header bg-transparent">
               <div class="row align-items-center">
                 <div class="col">
-                  <h6 class="text-uppercase text-muted ls-1 mb-1">Performance</h6>
-                  <h2 class="mb-0">Total orders</h2>
+                  <h6 class="text-uppercase text-muted ls-1 mb-1">Rendimiento</h6>
+                  <h2 class="mb-0">Temperaturas</h2>
                 </div>
               </div>
             </div>
@@ -462,34 +462,28 @@
           </div>
         </div>
       </div>
-      <!-- Footer -->
-      <footer class="footer">
-        <div class="row align-items-center justify-content-xl-between">
-          <div class="col-xl-6">
-            <div class="copyright text-center text-xl-left text-muted">
-              &copy; 2018 <a href="https://www.creative-tim.com" class="font-weight-bold ml-1" target="_blank">Creative Tim</a>
-            </div>
-          </div>
-          <div class="col-xl-6">
-            <ul class="nav nav-footer justify-content-center justify-content-xl-end">
-              <li class="nav-item">
-                <a href="https://www.creative-tim.com" class="nav-link" target="_blank">Creative Tim</a>
-              </li>
-              <li class="nav-item">
-                <a href="https://www.creative-tim.com/presentation" class="nav-link" target="_blank">About Us</a>
-              </li>
-              <li class="nav-item">
-                <a href="http://blog.creative-tim.com" class="nav-link" target="_blank">Blog</a>
-              </li>
-              <li class="nav-item">
-                <a href="https://github.com/creativetimofficial/argon-dashboard/blob/master/LICENSE.md" class="nav-link" target="_blank">MIT License</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </footer>
     </div>
   </div>
+    <div id="popupAll" class="modal fade">
+        <div id="popupAll1" class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-body" style="text-align: justify;">
+                <table width="100%" border="1" style="border-collapse:collapse;">
+                <thead>
+                    <tr>
+                        <th colspan="3" class="" id="popUpTitel">Agregar dispostivo</th>
+                    </tr>
+                   
+                </thead>
+                <tbody id="trPopup"></tbody>
+                </table>
+            </div>
+            <div class="modal-footer" style="clear:both;">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+            </div>
+        </div>
+      </div>
+    </div>
 
 
 
@@ -497,5 +491,13 @@
     <script src="Shared/dashboard/assets/vendor/chart.js/dist/Chart.min.js"></script>
     <script src="Shared/dashboard/assets/vendor/chart.js/dist/Chart.extension.js"></script>
     <script src="Shared/dashboard/assets/js/argon.js"></script>
-
+    <script>
+         function showPopUp(titulo, url) {             
+                var html = '<iframe class="embed-responsive-item" src="/' + url  + '" style="border: 0px;width: 100%; height: 400px;"></iframe>';
+                $('#trPopup').html(html);
+                $('#popUpTitel').html(titulo);
+                $('#popupAll').modal('show');       
+            return;
+        }
+    </script>
 </asp:Content>
