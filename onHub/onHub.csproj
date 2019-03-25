@@ -174,7 +174,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="dashboard.aspx" />
     <Content Include="Default.aspx" />
-    <Content Include="addDevice.aspx" />
+    <Content Include="editDevice.aspx" />
     <Content Include="external\404.html" />
     <Content Include="external\500.html" />
     <Content Include="external\base\breadcrumb.html" />
@@ -2016,7 +2016,7 @@
     <Content Include="login.aspx" />
     <Content Include="logout.aspx" />
     <Content Include="register.aspx" />
-    <Content Include="registerDevice.aspx" />
+    <Content Include="addDevice.aspx" />
     <Content Include="Scripts\dash.js" />
     <Content Include="Scripts\gtag.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -2094,12 +2094,12 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="addDevice.aspx.cs">
-      <DependentUpon>addDevice.aspx</DependentUpon>
+    <Compile Include="editDevice.aspx.cs">
+      <DependentUpon>editDevice.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="addDevice.aspx.designer.cs">
-      <DependentUpon>addDevice.aspx</DependentUpon>
+    <Compile Include="editDevice.aspx.designer.cs">
+      <DependentUpon>editDevice.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -2183,12 +2183,12 @@
     <Compile Include="register.aspx.designer.cs">
       <DependentUpon>register.aspx</DependentUpon>
     </Compile>
-    <Compile Include="registerDevice.aspx.cs">
-      <DependentUpon>registerDevice.aspx</DependentUpon>
+    <Compile Include="addDevice.aspx.cs">
+      <DependentUpon>addDevice.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="registerDevice.aspx.designer.cs">
-      <DependentUpon>registerDevice.aspx</DependentUpon>
+    <Compile Include="addDevice.aspx.designer.cs">
+      <DependentUpon>addDevice.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>

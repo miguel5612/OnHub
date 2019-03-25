@@ -118,8 +118,8 @@
         }
         catch (err) {}
     </script>
-        <asp:SqlDataSource runat="server" ID="dsDevices" ConnectionString="<%$ ConnectionStrings:AirQConnectionString %>"
-		ProviderName="<%$ ConnectionStrings:AirQConnectionString.ProviderName %>"
+        <asp:SqlDataSource runat="server" ID="dsDevices" ConnectionString="<%$ ConnectionStrings:onHubConnectionString %>"
+		ProviderName="<%$ ConnectionStrings:onHubConnectionString.ProviderName %>"
 	SelectCommand="SELECT * FROM measurements WHERE ([topic] = @iNTopic) And MONTH(registerAt) = @month  AND DAY(registerAt)>= @day AND DAY(registerAt)< @endDay AND YEAR(registerAt) = @year ORDER BY registerAt ASC">
             <selectparameters>
                 <asp:SessionParameter Name="iNTopic" SessionField="iNTopic" Type="String" />

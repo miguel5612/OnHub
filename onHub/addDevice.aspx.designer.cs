@@ -10,25 +10,16 @@
 namespace airQ {
     
     
-    public partial class editDevice {
+    public partial class registerDevice {
         
         /// <summary>
-        /// gvDevices control.
+        /// lblNombre control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvDevices;
-        
-        /// <summary>
-        /// editDiv control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl editDiv;
+        protected global::System.Web.UI.WebControls.Label lblNombre;
         
         /// <summary>
         /// txtName control.
@@ -40,6 +31,15 @@ namespace airQ {
         protected global::System.Web.UI.WebControls.TextBox txtName;
         
         /// <summary>
+        /// lblInTopic control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblInTopic;
+        
+        /// <summary>
         /// txtInTopic control.
         /// </summary>
         /// <remarks>
@@ -47,6 +47,15 @@ namespace airQ {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtInTopic;
+        
+        /// <summary>
+        /// lblOutTopic control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblOutTopic;
         
         /// <summary>
         /// txtOutTopic control.
@@ -58,39 +67,21 @@ namespace airQ {
         protected global::System.Web.UI.WebControls.TextBox txtOutTopic;
         
         /// <summary>
-        /// deviceActiv control.
+        /// dsDevice control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox deviceActiv;
+        protected global::System.Web.UI.WebControls.SqlDataSource dsDevice;
         
         /// <summary>
-        /// btnEnviar control.
+        /// btnRegister control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEnviar;
-        
-        /// <summary>
-        /// btnDescartar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnDescartar;
-        
-        /// <summary>
-        /// dsDevices control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource dsDevices;
+        protected global::System.Web.UI.WebControls.Button btnRegister;
     }
 }
