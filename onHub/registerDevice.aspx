@@ -19,7 +19,7 @@
 	</div>
 
 	<br />
-	<asp:SqlDataSource ID="dsDevice" runat="server" ConnectionString="<%$ ConnectionStrings:AirQConnectionString %>" SelectCommand="SELECT * FROM [devices]"></asp:SqlDataSource>
+	<asp:SqlDataSource ID="dsDevice" runat="server" ConnectionString="<%$ ConnectionStrings:onHubConnectionString %>" SelectCommand="SELECT * FROM [devices]"></asp:SqlDataSource>
 	
 	<div class="form-group">
         <asp:Button style="position:fixed" CssClass="form-control btn btn-primary pull-right"  Text="Registrar" ID="btnRegister" runat="server" OnClick="btnRegister_Click" />
