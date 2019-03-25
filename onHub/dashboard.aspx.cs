@@ -4,7 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using airQ.App_Code;
+using System.Data;
+using onHub.App_Code;
+using onmoticaData.BLL;
 
 // including the M2Mqtt Library
 using uPLibrary.Networking.M2Mqtt;
@@ -90,5 +92,13 @@ namespace airQ
         {
             Response.Redirect("/monthReport");
         }
+        #region WebMethods
+        [System.Web.Services.WebMethod]
+        public static List<onUser> getUserData()
+        {
+            BLLOnmotica vPortal = new BLLOnmotica(Convert.ToInt32(HttpContext.Current.Session["FDAPerid"]));
+            return vPortal.getUserData();
+        }
+        #endregion
     }
 }

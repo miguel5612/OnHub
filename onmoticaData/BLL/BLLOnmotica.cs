@@ -4,9 +4,8 @@ using System.Web;
 using System.Data;
 using System.Linq;
 using System.Text;
-using onmoticaData;
 
-namespace airQ.App_Code
+namespace onmoticaData.BLL
 {
     public class BLLOnmotica
     {

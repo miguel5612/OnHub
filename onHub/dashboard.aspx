@@ -505,5 +505,23 @@
             window.location.reload(true);
             return false;
         }
+
+        $( document ).ready(function() {
+
+            //Get devices
+
+            $.ajax({
+                    type: "POST",
+                    url: "dashboard.aspx/getListBaustelle",
+                    data: "{Prio : '" + Prio + "'}",
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (response) {
+                        $("#trBaustellen").empty();
+                        $("#tmplPopupBaustelle").tmpl(response.d).appendTo($("#trBaustellen"));
+                        $('#popupBaustelle').modal('show');
+                    }
+                });
+        });
     </script>
 </asp:Content>
