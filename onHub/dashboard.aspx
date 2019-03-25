@@ -512,14 +512,12 @@
 
             $.ajax({
                     type: "POST",
-                    url: "dashboard.aspx/getListBaustelle",
-                    data: "{Prio : '" + Prio + "'}",
+                    url: "dashboard.aspx/getUserData",
+                    data: "{}",
                     contentType: "application/json; charset=utf-8",
                     dataType: "json",
                     success: function (response) {
-                        $("#trBaustellen").empty();
-                        $("#tmplPopupBaustelle").tmpl(response.d).appendTo($("#trBaustellen"));
-                        $('#popupBaustelle').modal('show');
+                        console.log(response);
                     }
                 });
         });
