@@ -58,7 +58,7 @@
                   <img alt="Image placeholder" src="Shared/dashboard/assets/img/theme/team-4-800x800.jpg">
                 </span>
                 <div class="media-body ml-2 d-none d-lg-block">
-                  <span class="mb-0 text-sm  font-weight-bold">Jessica Jones</span>
+                  <span class="mb-0 text-sm  font-weight-bold" id="spanName"></span>
                 </div>
               </div>
             </a>
@@ -103,8 +103,8 @@
                 <div class="card-body">
                   <div class="row">
                     <div class="col">
-                      <h5 class="card-title text-uppercase text-muted mb-0">Traffic</h5>
-                      <span class="h2 font-weight-bold mb-0">350,897</span>
+                      <h5 class="card-title text-uppercase text-muted mb-0">Dispositivos</h5>
+                      <span class="h2 font-weight-bold mb-0" id="deviceCount">1</span>
                     </div>
                     <div class="col-auto">
                       <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
@@ -112,10 +112,10 @@
                       </div>
                     </div>
                   </div>
-                  <p class="mt-3 mb-0 text-muted text-sm">
+                  <%--<p class="mt-3 mb-0 text-muted text-sm">
                     <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>
-                    <span class="text-nowrap">Since last month</span>
-                  </p>
+                    <span class="text-nowrap">Online</span>
+                  </p>--%>
                 </div>
               </div>
             </div>
@@ -124,19 +124,19 @@
                 <div class="card-body">
                   <div class="row">
                     <div class="col">
-                      <h5 class="card-title text-uppercase text-muted mb-0">New users</h5>
-                      <span class="h2 font-weight-bold mb-0">2,356</span>
+                      <h5 class="card-title text-uppercase text-muted mb-0">Temperatura maxima</h5>
+                      <span class="h2 font-weight-bold mb-0">100</span>
                     </div>
                     <div class="col-auto">
                       <div class="icon icon-shape bg-warning text-white rounded-circle shadow">
-                        <i class="fas fa-chart-pie"></i>
+                        <i class="fas fa-thermometer-full"></i>
                       </div>
                     </div>
                   </div>
-                  <p class="mt-3 mb-0 text-muted text-sm">
+                  <%--<p class="mt-3 mb-0 text-muted text-sm">
                     <span class="text-danger mr-2"><i class="fas fa-arrow-down"></i> 3.48%</span>
-                    <span class="text-nowrap">Since last week</span>
-                  </p>
+                    <span class="text-nowrap">OK</span>
+                  </p>--%>
                 </div>
               </div>
             </div>
@@ -145,19 +145,19 @@
                 <div class="card-body">
                   <div class="row">
                     <div class="col">
-                      <h5 class="card-title text-uppercase text-muted mb-0">Sales</h5>
+                      <h5 class="card-title text-uppercase text-muted mb-0">Ultima medicion reportada: </h5>
                       <span class="h2 font-weight-bold mb-0">924</span>
                     </div>
                     <div class="col-auto">
                       <div class="icon icon-shape bg-yellow text-white rounded-circle shadow">
-                        <i class="fas fa-users"></i>
+                        <i class="fas fa-clock"></i>
                       </div>
                     </div>
                   </div>
-                  <p class="mt-3 mb-0 text-muted text-sm">
+                  <%--<p class="mt-3 mb-0 text-muted text-sm">
                     <span class="text-warning mr-2"><i class="fas fa-arrow-down"></i> 1.10%</span>
                     <span class="text-nowrap">Since yesterday</span>
-                  </p>
+                  </p>--%>
                 </div>
               </div>
             </div>
@@ -166,19 +166,19 @@
                 <div class="card-body">
                   <div class="row">
                     <div class="col">
-                      <h5 class="card-title text-uppercase text-muted mb-0">Performance</h5>
+                      <h5 class="card-title text-uppercase text-muted mb-0">Estado de tu equipo</h5>
                       <span class="h2 font-weight-bold mb-0">49,65%</span>
                     </div>
                     <div class="col-auto">
                       <div class="icon icon-shape bg-info text-white rounded-circle shadow">
-                        <i class="fas fa-percent"></i>
+                        <i class="fas fa-power-off"></i>
                       </div>
                     </div>
                   </div>
-                  <p class="mt-3 mb-0 text-muted text-sm">
+                  <%--<p class="mt-3 mb-0 text-muted text-sm">
                     <span class="text-success mr-2"><i class="fas fa-arrow-up"></i> 12%</span>
                     <span class="text-nowrap">Since last month</span>
-                  </p>
+                  </p>--%>
                 </div>
               </div>
             </div>
@@ -508,18 +508,21 @@
 
         $( document ).ready(function() {
 
-            //Get devices
+            //Get usrData
 
-            $.ajax({
-                    type: "POST",
-                    url: "dashboard/getUserData",
-                    data: "{}",
-                    contentType: "application/json; charset=utf-8",
-                    dataType: "json",
-                    success: function (response) {
-                        console.log(response);
-                    }
-                });
+           $.ajax({
+                type: "POST",
+                url: '/dashboard.aspx/getUserData',
+                contentType: "application/json; charset=utf-8",
+                success: function (data) {
+                    $("#spanName").text(data.d[0].userName);
+                },
+                failure: function (response) {
+                    alert(response.d);
+                }
+            });
+
+
         });
     </script>
 </asp:Content>
