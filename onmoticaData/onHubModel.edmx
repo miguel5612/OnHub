@@ -141,6 +141,7 @@ warning 6002: The table/view 'onHub.yerCar.thing' does not have a primary key de
           <Property Name="thingTyp" Type="int" />
           <Property Name="state" Type="int" />
           <Property Name="creationDate" Type="datetime" />
+          <Property Name="deviceName" Type="varchar" MaxLength="100" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'onHub.yerCar.thingTyp' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -216,7 +217,8 @@ warning 6002: The table/view 'onHub.yerCar.userTyp' does not have a primary key 
     [thing].[outTopic] AS [outTopic], 
     [thing].[thingTyp] AS [thingTyp], 
     [thing].[state] AS [state], 
-    [thing].[creationDate] AS [creationDate]
+    [thing].[creationDate] AS [creationDate], 
+    [thing].[deviceName] AS [deviceName]
     FROM [yerCar].[thing] AS [thing]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="thingTyp" EntityType="Self.thingTyp" store:Type="Tables" store:Schema="yerCar">
@@ -402,6 +404,7 @@ warning 6002: The table/view 'onHub.yerCar.userTyp' does not have a primary key 
           <Property Name="thingTyp" Type="Int32" />
           <Property Name="state" Type="Int32" />
           <Property Name="creationDate" Type="DateTime" Precision="3" />
+          <Property Name="deviceName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="thingTyp">
           <Key>
@@ -598,6 +601,7 @@ warning 6002: The table/view 'onHub.yerCar.userTyp' does not have a primary key 
           <EntitySetMapping Name="things">
             <EntityTypeMapping TypeName="onHubModel.thing">
               <MappingFragment StoreEntitySet="thing">
+                <ScalarProperty Name="deviceName" ColumnName="deviceName" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="idUsr" ColumnName="idUsr" />
                 <ScalarProperty Name="inTopic" ColumnName="inTopic" />

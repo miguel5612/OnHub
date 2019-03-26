@@ -21,5 +21,6 @@ namespace onmoticaData
         public Nullable<int> thingTyp { get; set; }
         public Nullable<int> state { get; set; }
         public Nullable<System.DateTime> creationDate { get; set; }
+        public string deviceName { get; set; }
     }
 }
