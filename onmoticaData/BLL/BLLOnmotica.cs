@@ -10,29 +10,29 @@ namespace onmoticaData.BLL
     public class BLLOnmotica
     {
         private Int32 usrId;
-        public BLLOnmotica(int pUsrId)
+        public BLLOnmotica(Int32 pUsrId)
         {
             usrId = pUsrId;
         }
 
         
-        public List<onUser> getUserData()
+        public List<onUserClass> getUserData()
         {
             using (onHubEntities DB = new onHubEntities())
             {
-                string strSQL = "SELECT * FROM onUser WHERE id = " + usrId.ToString();
-                return DB.Database.SqlQuery<onUser>(strSQL).ToList();
+                string strSQL = "SELECT id, userName, userTypID, creationDate FROM onUser WHERE id = " + usrId.ToString();
+                return DB.Database.SqlQuery<onUserClass>(strSQL).ToList();
             }
         }
-        public List<personalData> getpersonalData()
+        public List<personalDataClass> getpersonalData()
         {
             using (onHubEntities DB = new onHubEntities())
             {
                 string strSQL = "SELECT * FROM personalData WHERE id = " + usrId.ToString();
-                return DB.Database.SqlQuery<personalData>(strSQL).ToList();
+                return DB.Database.SqlQuery<personalDataClass>(strSQL).ToList();
             }
         }
-        public List<report> getReport(string inTopic, string name, int thingId, DateTime startDate)
+        public List<reportClass> getReport(string inTopic, string name, int thingId, DateTime startDate)
         {
             using (onHubEntities DB = new onHubEntities())
             {
@@ -40,15 +40,15 @@ namespace onmoticaData.BLL
                 DB.Database.ExecuteSqlCommand(strSQL);
 
                 strSQL = "SELECT * FROM report WHERE inTopic = " + inTopic.ToString() + " ORDER BY startDate DESC";
-                return DB.Database.SqlQuery<report>(strSQL).ToList();
+                return DB.Database.SqlQuery<reportClass>(strSQL).ToList();
             }
         }
-        public List<onEmail> getonEmail()
+        public List<onEmailClass> getonEmail()
         {
             using (onHubEntities DB = new onHubEntities())
             {
                 string strSQL = "SELECT * FROM onEmail WHERE usrId = " + usrId.ToString();
-                return DB.Database.SqlQuery<onEmail>(strSQL).ToList();
+                return DB.Database.SqlQuery<onEmailClass>(strSQL).ToList();
             }
         }
         public List<userTyp> getuserTyp()
@@ -59,12 +59,12 @@ namespace onmoticaData.BLL
                 return DB.Database.SqlQuery<userTyp>(strSQL).ToList();
             }
         }
-        public List<thing> getthing()
+        public List<thingClass> getthing()
         {
             using (onHubEntities DB = new onHubEntities())
             {
                 string strSQL = "SELECT * FROM thing WHERE idUsr = " + usrId.ToString();
-                return DB.Database.SqlQuery<thing>(strSQL).ToList();
+                return DB.Database.SqlQuery<thingClass>(strSQL).ToList();
             }
         }
         public List<state> getThingState(int thingId)
@@ -75,12 +75,12 @@ namespace onmoticaData.BLL
                 return DB.Database.SqlQuery<state>(strSQL).ToList();
             }
         }
-        public List<thingTyp> getthingTyp(int thingId)
+        public List<thingTypClass> getthingTyp(int thingId)
         {
             using (onHubEntities DB = new onHubEntities())
             {
                 string strSQL = "SELECT thingTyp.* FROM thing INNER JOIN thingTyp ON thing.thingTyp = thingTyp.id  WHERE thingId = " + thingId.ToString();
-                return DB.Database.SqlQuery<thingTyp>(strSQL).ToList();
+                return DB.Database.SqlQuery<thingTypClass>(strSQL).ToList();
             }
         }
 
@@ -95,7 +95,7 @@ namespace onmoticaData.BLL
 
     }
 
-    public class report
+    public class reportClass
     {
         public int id { get; set; }
         public string name { get; set; }
@@ -149,7 +149,7 @@ namespace onmoticaData.BLL
         public string field14AVG { get; set; }
         public string field15AVG { get; set; }
     }
-    public class personalData
+    public class personalDataClass
     {
         public int id { get; set; }
         public int usrId { get; set; }
@@ -161,15 +161,14 @@ namespace onmoticaData.BLL
         public string linkedinURL { get; set; }
     }
 
-    public class onUser
+    public class onUserClass
     {
         public int id { get; set; }
         public string userName { get; set; }
-        public string password { get; set; }
-        public string userTypId { get; set; }
+        public int userTypId { get; set; }
         public DateTime creationDate { get; set; }
     }
-    public class onEmail
+    public class onEmailClass
     {
         public int id { get; set; }
         public int usrId { get; set; }
@@ -183,14 +182,14 @@ namespace onmoticaData.BLL
         public string description { get; set; }
         public int price { get; set; }
     }
-    public class thing
+    public class thingClass
     {
         public int id { get; set; }
         public int idUsr { get; set; }
         public string inTopic { get; set; }
         public string outTopic { get; set; }
         public int thingTyp { get; set; }
-        public bool state { get; set; }
+        public int state { get; set; }
         public DateTime creationDate { get; set; }
     }
     public class state
@@ -199,7 +198,7 @@ namespace onmoticaData.BLL
         public string name { get; set; }
         public DateTime createAt { get; set; }
     }
-    public class thingTyp
+    public class thingTypClass
     {
         public int id { get; set; }
         public string name { get; set; }

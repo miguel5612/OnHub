@@ -94,7 +94,7 @@ namespace airQ
         }
         #region WebMethods
         [System.Web.Services.WebMethod]
-        public static List<onUser> getUserData()
+        public static List<onUserClass> getUserData()
         {
             int usrId = Convert.ToInt32(HttpContext.Current.Session["UsrID"]);
             BLLOnmotica vDashboard = new BLLOnmotica(usrId);
