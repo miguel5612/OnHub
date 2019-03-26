@@ -41,7 +41,7 @@ namespace airQ
             #region validationDeviceSeelctedOrNull
             if (Session["deviceName"] != null & Session["deviceId"] != null)
             {
-                lblTittle.Text = Session["deviceName" + Session["deviceId"].ToString()].ToString();
+                lblTittle.Text = Session["deviceName"].ToString();
                 divMeters.Visible = true;
             }
             else

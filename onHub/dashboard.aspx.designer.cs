@@ -13,6 +13,15 @@ namespace airQ {
     public partial class dashboard1 {
         
         /// <summary>
+        /// divMeters control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divMeters;
+        
+        /// <summary>
         /// lblTittle control.
         /// </summary>
         /// <remarks>
@@ -22,12 +31,12 @@ namespace airQ {
         protected global::System.Web.UI.WebControls.Label lblTittle;
         
         /// <summary>
-        /// divMeters control.
+        /// txtReceived control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divMeters;
+        protected global::System.Web.UI.WebControls.TextBox txtReceived;
     }
 }

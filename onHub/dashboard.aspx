@@ -3,7 +3,7 @@
 	<!--<script src="Scripts/dash.js"></script>-->
 	<script src="Scripts/jquery.signalR-2.4.0.min.js"></script>
 	<script src="signalr/hubs"></script>
-	<script src="Scripts/websocket.js"></script>
+    <script src="Shared/dashboard/ws/websocket.js"></script>
 
     <link href="Shared/dashboard/assets/vendor/nucleo/css/nucleo.css" rel="stylesheet" />
     <link href="Shared/dashboard/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet" />
@@ -29,7 +29,6 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 	
 
-    <asp:Label Text="" ID="lblTittle" runat="server" />
     
   <!-- Main content -->
   <div runat="server" id="divMeters" class="main-content">
@@ -37,7 +36,7 @@
     <nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
       <div class="container-fluid">
         <!-- Brand -->
-        <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="./index.html">Dashboard</a>
+        <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="./index.html">Dashboard -</a> <asp:Label Text="" ID="lblTittle" runat="server" />
         <!-- Form -->
         <form class="navbar-search navbar-search-dark form-inline mr-3 d-none d-md-flex ml-lg-auto">
           <div class="form-group mb-0">
@@ -200,14 +199,20 @@
                 <div class="col">
                   <ul class="nav nav-pills justify-content-end">
                     <li class="nav-item mr-2 mr-md-0">
-                      <a href="#" class="nav-link py-2 px-3 active" data-toggle="tab">
+                      <a href="#" class="nav-link py-2 px-3 active" id="corriente" data-toggle="tab">
                         <span class="d-none d-md-block">Corriente</span>
                         <span class="d-md-none">M</span>
                       </a>
                     </li>
                     <li class="nav-item">
-                      <a href="#" class="nav-link py-2 px-3" data-toggle="tab">
+                      <a href="#" class="nav-link py-2 px-3" id="voltaje" data-toggle="tab">
                         <span class="d-none d-md-block">Voltaje</span>
+                        <span class="d-md-none">W</span>
+                      </a>
+                    </li>                      
+                    <li class="nav-item">
+                      <a href="#" class="nav-link py-2 px-3" id="potencia" data-toggle="tab">
+                        <span class="d-none d-md-block">potencia</span>
                         <span class="d-md-none">W</span>
                       </a>
                     </li>
@@ -219,7 +224,7 @@
               <!-- Chart -->
               <div class="chart">
                 <!-- Chart wrapper -->
-                <canvas id="chart-sales" class="chart-canvas"></canvas>
+                <canvas id="chart-electric" class="chart-canvas"></canvas>
               </div>
             </div>
           </div>
@@ -237,7 +242,7 @@
             <div class="card-body">
               <!-- Chart -->
               <div class="chart">
-                <canvas id="chart-orders" class="chart-canvas"></canvas>
+                <canvas id="chart-temperatures" class="chart-canvas"></canvas>
               </div>
             </div>
           </div>
@@ -485,7 +490,9 @@
       </div>
     </div>
 
-
+    <div style="visibility:hidden">
+		<asp:TextBox runat="server" ID="txtReceived"/>
+	</div>
 
 
     <script src="Shared/dashboard/assets/vendor/chart.js/dist/Chart.min.js"></script>
