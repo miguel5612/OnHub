@@ -96,7 +96,8 @@ namespace airQ
         [System.Web.Services.WebMethod]
         public static List<onUser> getUserData()
         {
-            BLLOnmotica vPortal = new BLLOnmotica(Convert.ToInt32(HttpContext.Current.Session["UsrID"]));
+            int usrId = Convert.ToInt32(HttpContext.Current.Session["UsrID"]);
+            BLLOnmotica vPortal = new BLLOnmotica(usrId);
             return vPortal.getUserData();
         }
         #endregion

@@ -512,7 +512,7 @@
 
             $.ajax({
                     type: "POST",
-                    url: "dashboard.aspx/getUserData",
+                    url: "dashboard/getUserData",
                     data: "{}",
                     contentType: "application/json; charset=utf-8",
                     dataType: "json",
