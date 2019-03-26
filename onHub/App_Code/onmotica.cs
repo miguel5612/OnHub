@@ -109,7 +109,7 @@ namespace onHub.App_Code
             NumberFormatInfo nfi = new NumberFormatInfo();
             nfi.NumberDecimalSeparator = ".";
 
-            var pSQL = "INSERT INTO [measurements] ([inTopic], [registerDate], [status], [field1], [field2], [field3], [field4], [field5], [field6], [field7], [field8], [field9], [field10], [field11], [field12], [field13], [field14], [field15]) VALUES ('@inTopic', @registerAt, '@status', @field1, @field2, @field3, @field4, @field5, @field6, @field7, @field8, @field9, @field10, @field11, @field12, @field13, @field14, @field15, @field16)";
+            var pSQL = "INSERT INTO [measurements] ([inTopic], [registerDate], [status], [field1], [field2], [field3], [field4], [field5], [field6], [field7], [field8], [field9], [field10], [field11], [field12], [field13], [field14], [field15]) VALUES ('@inTopic', @registerAt, '@status', '@field1', '@field2', '@field3', '@field4', '@field5', '@field6', '@field7', '@field8', '@field9', '@field10', '@field11', '@field12', '@field13', '@field14', '@field15')";
 
             try
             {
@@ -121,21 +121,21 @@ namespace onHub.App_Code
                 bool status = jsonMesssage.status == null ? 0 : jsonMesssage.status;
                 pSQL = pSQL.Replace("@status", status.ToString());
 
-                pSQL = pSQL.Replace("@field1", jsonMesssage.D1);
-                pSQL = pSQL.Replace("@field2", jsonMesssage.D2);
-                pSQL = pSQL.Replace("@field3", jsonMesssage.D3);
-                pSQL = pSQL.Replace("@field4", jsonMesssage.D4);
-                pSQL = pSQL.Replace("@field5", jsonMesssage.D5);
-                pSQL = pSQL.Replace("@field6", jsonMesssage.D6);
-                pSQL = pSQL.Replace("@field7", jsonMesssage.D7);
-                pSQL = pSQL.Replace("@field8", jsonMesssage.D8);
-                pSQL = pSQL.Replace("@field9", jsonMesssage.D9);
-                pSQL = pSQL.Replace("@field10", jsonMesssage.D10);
-                pSQL = pSQL.Replace("@field11", jsonMesssage.D11);
-                pSQL = pSQL.Replace("@field12", jsonMesssage.D12);
-                pSQL = pSQL.Replace("@field13", jsonMesssage.D13);
-                pSQL = pSQL.Replace("@field14", jsonMesssage.D14);
-                pSQL = pSQL.Replace("@field15", jsonMesssage.D15);
+                pSQL = pSQL.Replace("@field1", (String)jsonMesssage.D1);
+                pSQL = pSQL.Replace("@field2", (String)jsonMesssage.D2);
+                pSQL = pSQL.Replace("@field3", (String)jsonMesssage.D3);
+                pSQL = pSQL.Replace("@field4", (String)jsonMesssage.D4);
+                pSQL = pSQL.Replace("@field5", (String)jsonMesssage.D5);
+                pSQL = pSQL.Replace("@field6", (String)jsonMesssage.D6);
+                pSQL = pSQL.Replace("@field7", (String)jsonMesssage.D7);
+                pSQL = pSQL.Replace("@field8", (String)jsonMesssage.D8);
+                pSQL = pSQL.Replace("@field9", (String)jsonMesssage.D9);
+                pSQL = pSQL.Replace("@field10", (String)jsonMesssage.D10);
+                pSQL = pSQL.Replace("@field11", (String)jsonMesssage.D11);
+                pSQL = pSQL.Replace("@field12", (String)jsonMesssage.D12);
+                pSQL = pSQL.Replace("@field13", (String)jsonMesssage.D13);
+                pSQL = pSQL.Replace("@field14", (String)jsonMesssage.D14);
+                pSQL = pSQL.Replace("@field15", (String)jsonMesssage.D15);
 
                 executeSQLonHub(pSQL);
                 

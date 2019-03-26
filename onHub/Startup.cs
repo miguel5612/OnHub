@@ -23,7 +23,7 @@ namespace airQ
         {
             app.MapSignalR();
             // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=316888
-           // mqttConection();
+            mqttConection();
         }
 
         #region mqttConection
@@ -37,7 +37,7 @@ namespace airQ
             String[] topics = new string[numTopic];
 
             var counter = 0;
-            var pSQL = "SELECT inTopic from devices";
+            var pSQL = "SELECT distinct inTopic from thing";
             using (SqlDataReader dr = onmotica.fetchReader(pSQL))
             {
                 while (dr.Read())
