@@ -109,114 +109,36 @@ namespace onHub.App_Code
             NumberFormatInfo nfi = new NumberFormatInfo();
             nfi.NumberDecimalSeparator = ".";
 
-            var pSQL = "INSERT INTO [measurements] ([topic], [data], [registerAt], [activ], @otherFields) VALUES ('@topic', '@data', @registerAt, '@activ', @otherValues)";
+            var pSQL = "INSERT INTO [measurements] ([inTopic], [registerDate], [status], [field1], [field2], [field3], [field4], [field5], [field6], [field7], [field8], [field9], [field10], [field11], [field12], [field13], [field14], [field15]) VALUES ('@inTopic', @registerAt, '@status', @field1, @field2, @field3, @field4, @field5, @field6, @field7, @field8, @field9, @field10, @field11, @field12, @field13, @field14, @field15, @field16)";
 
             try
             {
                 dynamic jsonMesssage = JsonConvert.DeserializeObject(msg);
-                var data = "";
-                pSQL = pSQL.Replace("@topic", topic);
+
+                pSQL = pSQL.Replace("@inTopic", topic);
                 pSQL = pSQL.Replace("@registerAt", "CONVERT(datetime, '" + convertD2IDateTime(DateNow()) + "')");
-                pSQL = pSQL.Replace("@activ", "1");
 
-                data += Convert.ToDouble(jsonMesssage.D1).ToString(nfi);//temperatura - Cama caliente
-                data += ",";
-                data += Convert.ToDouble(jsonMesssage.D2).ToString(nfi); //humedad - Extrusor
-                data += ",";
-                data += Convert.ToDouble(jsonMesssage.D3).ToString(nfi); //Presion atmosferica - Motor 1
-                data += ",";
-                data += Convert.ToDouble(jsonMesssage.D4).ToString(nfi); //Alcoholes - Motor 2
-                data += ",";
-                data += Convert.ToDouble(jsonMesssage.D5).ToString(nfi); //TVOC - Motor 3
-                data += ",";
-                data += Convert.ToDouble(jsonMesssage.D6).ToString(nfi); //CO2 - Motor 4
-                data += ",";
-                data += Convert.ToDouble(jsonMesssage.D7).ToString(nfi); //Gas metano - Motor 5
-                data += ",";
-                data += Convert.ToDouble(jsonMesssage.D8).ToString(nfi); //NH4 - 
-                data += ",";
-                data += Convert.ToDouble(jsonMesssage.D9).ToString(nfi); //Latitud - Corriente
-                data += ",";
-                data += Convert.ToDouble(jsonMesssage.D10).ToString(nfi); //Longitud - Voltaje
+                bool status = jsonMesssage.status == null ? 0 : jsonMesssage.status;
+                pSQL = pSQL.Replace("@status", status.ToString());
 
-                var data2InserSQL = data; //Copio la data para insertar la fecha en el formato que deseo
-                if (topic.Contains("dron"))
-                {
-                    data += ",";
-                    string fecha = jsonMesssage.D11;
-                    if (Int32.Parse(fecha) > 0)
-                    {
-                        try
-                        {
+                pSQL = pSQL.Replace("@field1", jsonMesssage.D1);
+                pSQL = pSQL.Replace("@field2", jsonMesssage.D2);
+                pSQL = pSQL.Replace("@field3", jsonMesssage.D3);
+                pSQL = pSQL.Replace("@field4", jsonMesssage.D4);
+                pSQL = pSQL.Replace("@field5", jsonMesssage.D5);
+                pSQL = pSQL.Replace("@field6", jsonMesssage.D6);
+                pSQL = pSQL.Replace("@field7", jsonMesssage.D7);
+                pSQL = pSQL.Replace("@field8", jsonMesssage.D8);
+                pSQL = pSQL.Replace("@field9", jsonMesssage.D9);
+                pSQL = pSQL.Replace("@field10", jsonMesssage.D10);
+                pSQL = pSQL.Replace("@field11", jsonMesssage.D11);
+                pSQL = pSQL.Replace("@field12", jsonMesssage.D12);
+                pSQL = pSQL.Replace("@field13", jsonMesssage.D13);
+                pSQL = pSQL.Replace("@field14", jsonMesssage.D14);
+                pSQL = pSQL.Replace("@field15", jsonMesssage.D15);
 
-                        /*
-                        var length = fecha.Length; // 5 70119 2 3
-                        var daylen = 0;
-                        if (length > 5) daylen = 2; 
-                        else daylen = 1;
-                        var year = Convert.ToInt32(fecha.Substring(length - 2, 2)) + 2000;
-                        var Month = Convert.ToInt32(fecha.Substring(length - 4, 2));
-                        var day = Convert.ToInt32(fecha.Substring(length - 5, daylen));
-                        DateTime dt = new DateTime(year, Month, day);
-                        data += dt.Date.ToString(); //Fecha
-                        */
-                        var length = fecha.Length; // 5 70119 2 3
-                        if (length == 5) fecha = "0" + fecha;
-
-                        var year = Convert.ToInt32(fecha.Substring(4, 2)) + 2000;
-                        var Month = Convert.ToInt32(fecha.Substring(2, 2));
-                        var day = Convert.ToInt32(fecha.Substring(0, 2));
-
-                        DateTime dt = new DateTime(year, Month, day);
-                        data += dt.Date.ToShortDateString(); //Fecha
-
-                        }
-                        catch(Exception ex)
-                        {
-                            saveInLogMQTT(ex);
-                        }
-                        finally
-                        {
-                            data += DateNow().ToString();
-                        }
-                    }
-                    else data += DateNow().ToString();
-
-                    //airQ
-
-                    var otherFields = "[temperatura], [humedad], [presionAtmosferica], [Alcohol], [TVOC], [CO2], [Metano], [NH4], [Latitud], [Longitud], [fecha]";
-                    pSQL = pSQL.Replace("@otherFields", otherFields);
-
-                    data2InserSQL += ",";
-                    data2InserSQL += "CONVERT(datetime, '" + convertD2IDateTime(DateNow()) + "')";
-                    var otherValues = data2InserSQL;
-                    pSQL = pSQL.Replace("@otherValues", otherValues);
-
-
-                    pSQL = pSQL.Replace("@data", data);
-                    executeSQLonHub(pSQL);
-
-                }
-                else if (topic.Contains("printer"))
-                {
-                    data += ",";
-                    data += jsonMesssage.D10; // Potencia electrica
-
-                    data += ",";
-                    data += convertD2SQLDate(DateNow()); //Fecha
-                    //3DPrinterSupervisionSys
-                    var otherFields = "[tempHotBed], [TempExt], [M1], [M2], [M3], [M4], [M5], [Corriente], [Voltaje], [PotenciaElectrica], [Fecha]";
-                    pSQL = pSQL.Replace("@otherFields", otherFields);
-
-                    data2InserSQL += ",";
-                    data2InserSQL += "CONVERT(datetime, '" + convertD2IDateTime(DateNow()) + "')";
-                    var otherValues = data2InserSQL;
-                    pSQL = pSQL.Replace("@otherValues", otherValues);
-
-
-                    pSQL = pSQL.Replace("@data", data);
-                    executeSQLMonitor3D(pSQL);
-                }
+                executeSQLonHub(pSQL);
+                
             }
             catch (Exception ex)
             {
