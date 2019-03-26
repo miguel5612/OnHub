@@ -29,10 +29,10 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 	
 
-
+    <asp:Label Text="" ID="lblTittle" runat="server" />
     
   <!-- Main content -->
-  <div class="main-content">
+  <div runat="server" id="divMeters" class="main-content">
     <!-- Top navbar -->
     <nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
       <div class="container-fluid">
