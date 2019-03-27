@@ -16,7 +16,11 @@ namespace airQ
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{
-            if (Request.QueryString["device"] != null)
+            if (Session["deviceID"] != null)
+            {
+                txtTopic.Value = Session["inTopic"].ToString(); // inTopic
+            }
+                if (Request.QueryString["device"] != null)
             {
                 if (int.Parse(Request.QueryString["device"].ToString()) > 0)
                 {

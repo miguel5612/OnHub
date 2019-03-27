@@ -9,7 +9,7 @@ $(function () {
         document.querySelectorAll("[ID*=txtReceived]")[0].value = data;
         var D1, D2, D3, D4, D5, D6, D7, D8, D9, D10, D11, D12, D13, D14, D15, state;
         console.log("Topic: ", inTopic, "savedTopic: ", String(document.querySelectorAll("[ID*=txtData9]")[0].value), String(document.querySelectorAll("[ID*=txtData9]")[0].value) == inTopic);
-        if (String(document.querySelectorAll("[ID*=txtData9]")[0].value) == inTopic) {
+        if (String(document.querySelectorAll("[ID*=txtTopic]")[0].value) == inTopic) {
             try {
                 mensaje = JSON.parse(data);
                 D1 = mensaje.D1;
