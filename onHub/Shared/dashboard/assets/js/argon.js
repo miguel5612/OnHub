@@ -822,7 +822,7 @@ $(document).ready(function () {
                     ticks: {
                         callback: function (value) {
                             if (!(value % 1)) {
-                                return '' + value + 'ºC';
+                                return '' + value + selectedUnit;
                             }
                         }
                     }
@@ -869,8 +869,8 @@ $(document).ready(function () {
                     ticks: {
                         callback: function (value) {
                             if (!(value % 10)) {
-                                //return '$' + value + 'k'
-                                return value
+                                return '$' + value + unidad[0] 
+                                //return value
                             }
                         }
                     }

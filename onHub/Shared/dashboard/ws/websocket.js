@@ -1,13 +1,14 @@
 ﻿var enc, mensaje, hub;
 
+var unidad = [" ºC", "V", "A", "W"];
+var D1, D2, D3, D4, D5, D6, D7, D8, D9, D10, D11, D12, D13, D14, D15, state;
+var selectedUnit = "";
 
 $(function () {
     var hub = $.connection.dashboardHub;
-    
 
     hub.client.updateInfo = function (data, inTopic) {
         document.querySelectorAll("[ID*=txtReceived]")[0].value = data;
-        var D1, D2, D3, D4, D5, D6, D7, D8, D9, D10, D11, D12, D13, D14, D15, state;
         console.log("Topic: ", inTopic, "savedTopic: ", String(document.querySelectorAll("[ID*=txtTopic]")[0].value), String(document.querySelectorAll("[ID*=txtTopic]")[0].value) == inTopic);
         if (String(document.querySelectorAll("[ID*=txtTopic]")[0].value) == inTopic) {
             try {
@@ -35,7 +36,7 @@ $(function () {
             }
             finally {
                 var d = new Date();
-                var tag = d.getHours() + ":" + d.getMinutes();
+                var tag = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
                 addData(temperaturesChart, "HB-" + tag, D1); //
                 addData(temperaturesChart, "EX-" + tag, D2); //
                 addData(temperaturesChart, "MX-" + tag, D3); //
@@ -45,12 +46,15 @@ $(function () {
 
                 if (document.getElementById("corriente").className.includes("active")) {
                     addData(electricChart, tag, parseInt(D8)); //Corriente
+                    selectedUnit = unidad[2];
                 } else if (document.getElementById("voltaje").className.includes("active")) {
                     addData(electricChart, tag, parseInt(D7)); //Corriente
+                    selectedUnit = unidad[1];
                 } else if (document.getElementById("potencia").className.includes("active")) {
                     addData(electricChart, tag, parseInt(D9)); //Corriente
+                    selectedUnit = unidad[3];
                 }
-
+                updateLastMeasureStatus(tag);
             }
         }
     }
@@ -58,7 +62,10 @@ $(function () {
 
     $.connection.hub.start();
 
-
+    function updateLastMeasureStatus(tag) {
+        $('#lastMeasure')[0].innerHTML = tag;
+        $('#status')[0].innerHTML = state >= 1 ? 'online' : 'offline';
+    }
 
 
 });
