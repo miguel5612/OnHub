@@ -44,11 +44,11 @@ $(function () {
                 addData(temperaturesChart, "MZ2-" + tag, D6); //
 
                 if (document.getElementById("corriente").className.includes("active")) {
-                    addData(electricChart, tag, D8); //Corriente
+                    addData(electricChart, tag, parseInt(D8)); //Corriente
                 } else if (document.getElementById("voltaje").className.includes("active")) {
-                    addData(electricChart, tag, D7); //Corriente
+                    addData(electricChart, tag, parseInt(D7)); //Corriente
                 } else if (document.getElementById("potencia").className.includes("active")) {
-                    addData(electricChart, tag, D9); //Corriente
+                    addData(electricChart, tag, parseInt(D9)); //Corriente
                 }
 
             }

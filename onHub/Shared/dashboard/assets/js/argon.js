@@ -821,7 +821,7 @@ $(document).ready(function () {
                     },
                     ticks: {
                         callback: function (value) {
-                            if (!(value % 10)) {
+                            if (!(value % 1)) {
                                 return '' + value + 'ºC';
                             }
                         }
