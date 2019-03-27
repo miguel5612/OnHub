@@ -802,6 +802,7 @@ var Charts = (function() {
 
 
 
+var temperaturesChart, electricChart;
 
 $(document).ready(function () {
     // Variables
@@ -809,7 +810,7 @@ $(document).ready(function () {
     var $chart = $('#chart-electric');
 
 
-    var electricChart = new Chart($chart, {
+    electricChart = new Chart($chart, {
         type: 'line',
         options: {
             scales: {
@@ -860,7 +861,7 @@ $(document).ready(function () {
     //var $ordersSelect = $('[name="ordersSelect"]');
 
     // Create chart
-    var temperaturesChart = new Chart($chart, {
+    temperaturesChart = new Chart($chart, {
         type: 'bar',
         options: {
             scales: {

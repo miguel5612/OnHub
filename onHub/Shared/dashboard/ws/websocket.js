@@ -8,7 +8,7 @@ $(function () {
     hub.client.updateInfo = function (data, inTopic) {
         document.querySelectorAll("[ID*=txtReceived]")[0].value = data;
         var D1, D2, D3, D4, D5, D6, D7, D8, D9, D10, D11, D12, D13, D14, D15, state;
-        console.log("Topic: ", inTopic, "savedTopic: ", String(document.querySelectorAll("[ID*=txtData9]")[0].value), String(document.querySelectorAll("[ID*=txtData9]")[0].value) == inTopic);
+        console.log("Topic: ", inTopic, "savedTopic: ", String(document.querySelectorAll("[ID*=txtTopic]")[0].value), String(document.querySelectorAll("[ID*=txtTopic]")[0].value) == inTopic);
         if (String(document.querySelectorAll("[ID*=txtTopic]")[0].value) == inTopic) {
             try {
                 mensaje = JSON.parse(data);
@@ -34,19 +34,21 @@ $(function () {
                 console.log("Lecture failed: ", err);
             }
             finally {
-                addData(temperaturesChart, "random", D1); //
-                addData(temperaturesChart, "random", D2); //
-                addData(temperaturesChart, "random", D3); //
-                addData(temperaturesChart, "random", D4); //
-                addData(temperaturesChart, "random", D5); //
-                addData(temperaturesChart, "random", D6); //
+                var d = new Date();
+                var tag = d.getHours() + ":" + d.getMinutes();
+                addData(temperaturesChart, "HB-" + tag, D1); //
+                addData(temperaturesChart, "EX-" + tag, D2); //
+                addData(temperaturesChart, "MX-" + tag, D3); //
+                addData(temperaturesChart, "MY-" + tag, D4); //
+                addData(temperaturesChart, "MZ1-" + tag, D5); //
+                addData(temperaturesChart, "MZ2-" + tag, D6); //
 
                 if (document.getElementById("corriente").className.includes("active")) {
-                    addData(electricChart, "random", D8); //Corriente
+                    addData(electricChart, tag, D8); //Corriente
                 } else if (document.getElementById("voltaje").className.includes("active")) {
-                    addData(electricChart, "random", D7); //Corriente
+                    addData(electricChart, tag, D7); //Corriente
                 } else if (document.getElementById("potencia").className.includes("active")) {
-                    addData(electricChart, "random", D9); //Corriente
+                    addData(electricChart, tag, D9); //Corriente
                 }
 
             }
